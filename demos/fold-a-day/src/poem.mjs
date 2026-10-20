@@ -1,0 +1,9 @@
+export const moments = {commute:'下班路上',window:'窗边发呆',meal:'一个人吃饭',night:'深夜未眠',walk:'散步途中'};
+export const moods = {calm:'平静',tired:'有点累',hope:'有期待',miss:'想念',light:'轻盈'};
+export const images = {rain:'一场雨',moon:'月亮',wind:'晚风',light:'一盏灯',cat:'一只猫'};
+const beginnings={commute:['我把今天折小，放进口袋','末班车替城市收起了逗号','走出写字楼，天空还没有下班'],window:['窗框替世界留了一页空白','我把时间放在窗台上晾着','玻璃那边，云慢慢翻身'],meal:['一碗饭，把傍晚稳稳接住','筷子停下时，世界也轻了一点','我给自己盛了满满一碗今天'],night:['凌晨是白天没有寄出的信','房间很静，钟却走得很远','我把没说完的话留给夜色'],walk:['脚步把熟悉的路重新读了一遍','我绕了一点远路，给今天留白','城市的边角，藏着不赶时间的人']};
+const pictures={rain:['雨把街道洗成一张旧唱片','一滴雨，在叶尖练习告别','屋檐下，雨替陌生人留了座位'],moon:['月亮没有回复，却一直在线','月光把远方折进窗沿','月亮像一句没有催促的晚安'],wind:['晚风翻过衣角，没带走什么','风经过的时候，树轻轻点头','一阵风，把心事吹成了省略号'],light:['一盏灯，替晚归的人守着句号','灯光把影子熨得很平','那一小团光，足够安放一个晚上'],cat:['猫把自己团成柔软的答案','一只猫经过，没有评价今天','猫在台阶上，替世界慢下来']};
+const turns={calm:['我不急着给这一刻命名','有些安静，比答案更完整','今天没有奇迹，也没有关系'],tired:['疲惫不是失败，只是走了很远','我允许自己，暂时不成为谁的答案','那些没完成的事，明天再轻轻拿起'],hope:['还没到来的日子，已经透进一点光','我把一个小小的愿望放回心里','明天尚未展开，就有了空白的可能'],miss:['原来想念，是把寻常重新看一遍','我在心里，替你留了一把椅子','有些距离，住在一句没说出的近况里'],light:['心事突然轻得像一张车票','快乐不大，刚好够装进口袋','我忽然想，对一朵云说谢谢']};
+const endings=['就让这一刻，慢一点合上。','这一页，不必写满也算生活。','而我还在，好好地经过人间。','剩下的路，留给明天的脚步。','今天到这里，已经很值得。'];
+export function compose({moment='commute',mood='calm',image='wind',variant=0}={}){if(!moments[moment]||!moods[mood]||!images[image])throw new TypeError('未知的诗歌选项');if(!Number.isInteger(variant)||variant<0)throw new TypeError('variant 必须为非负整数');return [beginnings[moment][variant%3],pictures[image][Math.floor(variant/3)%3],turns[mood][Math.floor(variant/9)%3],endings[Math.floor(variant/27)%5]].join('\n');}
+export function wrapText(text,measure,maxWidth){const lines=[];for(const paragraph of text.split('\n')){let line='';for(const char of Array.from(paragraph)){if(line&&measure(line+char)>maxWidth){lines.push(line);line=char;}else line+=char;}lines.push(line);}return lines;}

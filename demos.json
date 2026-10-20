@@ -1,0 +1,40 @@
+[
+  {
+    "slug": "fold-a-day",
+    "path": "demos/fold-a-day",
+    "title": "把今天折成一首诗",
+    "description": "把日常、心情与意象折成可编辑、可保存的诗笺",
+    "date": "2026-10-19",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/fold-a-day/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-fold-a-day.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    }
+  },
+  {
+    "slug": "ordinary-museum",
+    "path": "demos/ordinary-museum",
+    "title": "日常物证馆",
+    "description": "为普通物件写展签：原创虚构常设展、个人收藏、PNG海报与本地备份",
+    "date": "2026-10-20",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/ordinary-museum/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-ordinary-museum.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    }
+  }
+]

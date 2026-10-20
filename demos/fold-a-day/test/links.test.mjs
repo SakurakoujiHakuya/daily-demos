@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';
+test('navigation never advertises a nonexistent repository',async()=>{const html=await readFile('src/index.html','utf8');assert.ok(!html.includes('github.com'));assert.ok(html.includes('MIT 许可'));assert.deepEqual([...html.matchAll(/href="([^"]+)"/g)].map(x=>x[1]),['./style.css','./','./fold-a-day-source.zip']);});

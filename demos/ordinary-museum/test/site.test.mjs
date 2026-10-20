@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';
+const html=await readFile(new URL('../src/index.html',import.meta.url),'utf8');const app=await readFile(new URL('../src/app.mjs',import.meta.url),'utf8');
+test('no unavailable GitHub link, external SDK, or analytics',()=>{assert.ok(!html.includes('github.com/'));assert.ok(!html.includes('<script src="http'));assert.ok(!app.includes('fetch('));assert.ok(html.includes('ordinary-museum-source.zip'));});
+test('all literal app IDs have a corresponding HTML ID',()=>{const ids=new Set([...html.matchAll(/id="([^"]+)"/g)].map(m=>m[1]));for(const match of app.matchAll(/\$\('([^']+)'\)/g))assert.ok(ids.has(match[1]),match[1]);});
+test('privacy, sample fiction, required input, and export are disclosed',()=>{assert.ok(html.includes('原创虚构故事'));assert.ok(html.includes('不会上传'));assert.ok(html.includes('maxlength="240"'));assert.ok(html.includes('aria-live="polite"'));assert.ok(app.includes('canvas.width=1200'));assert.ok(app.includes('canvas.height=1600'));});

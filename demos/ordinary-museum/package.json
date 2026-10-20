@@ -1,0 +1,1 @@
+{"name":"ordinary-museum","version":"1.0.0","private":true,"type":"module","license":"MIT","engines":{"node":">=22"},"scripts":{"dev":"node scripts/serve.mjs","build":"node scripts/build.mjs","test":"node --test test/*.test.mjs","check":"npm test && npm run build","preview":"node scripts/serve.mjs dist"}}
