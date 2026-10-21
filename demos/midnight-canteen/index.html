@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#28382f" />
+    <meta
+      name="description"
+      content="开一家只营业七夜的小食堂。备货、定价、搭配料理，在账本和人情之间做选择。"
+    />
+    <title>午夜小食堂 · 七夜经营手记</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header class="masthead">
+      <a
+        class="brand"
+        href="https://github.com/SakurakoujiHakuya/daily-demos"
+        target="_blank"
+        rel="noopener noreferrer"
+        >夜 / 源码与作品目录 ↗</a
+      ><span>一间店 · 七个夜晚 · 很多种生活</span
+      ><button id="help" class="text-button">玩法说明 ↗</button>
+    </header>
+    <main id="app"></main>
+    <div
+      id="announcer"
+      class="sr-only"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+    <dialog id="rules">
+      <button id="close-help" class="close" aria-label="关闭说明">×</button
+      ><span class="eyebrow">HOW TO PLAY</span>
+      <h2>把今晚，做成一顿热饭。</h2>
+      <ol>
+        <li>
+          看客人口味预报，选择最多三道菜单。选择加价后，客人预算会影响满意度。
+        </li>
+        <li>
+          按食谱采购。每位客人吃一道，每道需要两份食材。可用「粗配一篮食材」作起点（每种补至
+          2 份），再按客人口味调整。
+        </li>
+        <li>
+          开门后，点两种食材，再选做法出餐。点盘中食材可撤回。做错会浪费食材，客人仍会等待。
+        </li>
+        <li>
+          客人优先点符合口味的菜单。做别的已知菜也能收钱，但口碑会下降。价格超过预算，每超出
+          1 元扣 2 满意度。
+        </li>
+        <li>
+          每夜收 ¥12
+          房租。鲜食全部损耗，米饭和面条保留。七夜后按现金、口碑与浪费得到不同结局。
+        </li>
+      </ol>
+      <p>
+        无倒计时、不联网。每次操作立即结算，进度仅存在这台设备。相同种子有相同天气和客人，可以试不同策略。
+      </p>
+    </dialog>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#101921" />
+    <title>末班车调度室 · NIGHT SHIFT</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <a class="brand" href="./" aria-label="末班车调度室首页"
+          ><span class="brand-icon">↗</span
+          ><span>末班车调度室<small>NIGHT SHIFT / TRANSIT LAB</small></span></a
+        >
+        <div class="header-note"><i></i> 虚构城市 · 可重演的最后一夜</div>
+        <button id="help" class="quiet">调度手册 ↗</button>
+      </header>
+      <main>
+        <section class="intro">
+          <div>
+            <div class="eyebrow">EVERY CONNECTION COUNTS.</div>
+            <h1>城市睡去前，<br />再送他们一程。</h1>
+            <p>几列车，几条轨道。把每一个“来不及”，调成“刚刚好”。</p>
+          </div>
+          <div class="shift-stamp">
+            <span>今晚值班</span><strong>23:40</strong
+            ><small>THE LAST CONNECTION</small>
+          </div>
+        </section>
+        <nav id="levels" aria-label="选择夜班关卡"></nav>
+        <section class="workbench">
+          <div class="city-column">
+            <div class="panel map-panel">
+              <div class="panel-heading">
+                <div>
+                  <span class="eyebrow">NETWORK / LIVE</span>
+                  <h2 id="level-title"></h2>
+                </div>
+                <div class="clock">
+                  <span id="clock">23:40</span
+                  ><small id="phase">待命 · 规划中</small>
+                </div>
+              </div>
+              <div
+                id="map"
+                class="map"
+                role="img"
+                aria-label="城市线路图及列车、候车人数"
+              ></div>
+              <div class="map-key">
+                <span><i class="blue"></i>蓝线</span
+                ><span><i class="orange"></i>橙线</span><span>○ 候车人数</span
+                ><span>▣ 列车 / 载客数</span>
+              </div>
+              <div class="transport">
+                <button id="reset" class="quiet" title="保留计划，从头模拟">
+                  ↶ 重来</button
+                ><button id="step">前进 1 分钟</button
+                ><button id="play" class="primary">▶ 自动演练</button
+                ><button id="finish" class="quiet">直接结算 ↗</button>
+              </div>
+              <div id="progress" class="progress"><i></i></div>
+            </div>
+            <div class="metrics" id="metrics"></div>
+            <section class="panel passengers">
+              <div class="panel-heading">
+                <h2>今晚，谁在等车</h2>
+                <span class="eyebrow">PASSENGER MANIFEST</span>
+              </div>
+              <div id="demand-list"></div>
+            </section>
+          </div>
+          <aside>
+            <section class="panel brief">
+              <span class="eyebrow">YOUR MISSION</span>
+              <h2 id="subtitle"></h2>
+              <p id="brief"></p>
+              <div id="seed-controls" hidden>
+                <label
+                  >题目种子<input
+                    id="seed"
+                    type="number"
+                    value="20261021"
+                    min="0"
+                    max="4294967295" /></label
+                ><button id="generate">生成同题</button>
+              </div>
+              <div class="limits" id="limits"></div>
+            </section>
+            <section class="panel dispatch">
+              <div class="panel-heading">
+                <h2>发车计划</h2>
+                <span id="fleet-count"></span>
+              </div>
+              <p class="hint">
+                先选线路与时间；点站名切换停靠。星桥可额外候车，给换乘留一扇门。
+              </p>
+              <div id="plans"></div>
+              <button id="add" class="add">＋ 加开一列末班车</button
+              ><button id="example" class="quiet example">
+                载入参考方案（会重置演练）
+              </button>
+              <p id="edit-note" class="hint"></p>
+            </section>
+            <section class="panel log">
+              <div class="panel-heading">
+                <h2>调度记录</h2>
+                <span class="eyebrow">RADIO LOG</span>
+              </div>
+              <div id="events" aria-live="polite"></div>
+            </section>
+          </aside>
+        </section>
+        <section class="panel comparison">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">LEARN / REVISE / REPEAT</span>
+              <h2>这一夜，还能更好。</h2>
+            </div>
+            <button id="clear-history" class="quiet">清空本关记录</button>
+          </div>
+          <div id="result" aria-live="polite"></div>
+          <div id="history"></div>
+        </section>
+        <footer>
+          <span>末班车调度室 / 一个关于选择、等待与抵达的策略小品</span
+          ><span>虚构数据 · 无联网依赖 · MIT</span>
+        </footer>
+      </main>
+    </div>
+    <dialog id="manual">
+      <button id="close-help" class="quiet close">关闭 ×</button>
+      <div class="eyebrow">DISPATCHER'S HANDBOOK</div>
+      <h2>不是跑得最快，<br />而是接得刚好。</h2>
+      <ol>
+        <li>
+          每段轨道行驶 1 分钟。中途停车停留 1 分钟，跳站不停车；起终点必须停。
+        </li>
+        <li>
+          星桥是唯一换乘站。下车后需要 1
+          分钟换乘；车还没走，就来得及。可设置星桥额外候车 0–5 分钟。
+        </li>
+        <li>
+          只上能停靠本段目的站的车。按开始候车的时间先到先上；同一时刻按客流清单顺序。满座的人留在站台。
+        </li>
+        <li>
+          每段轨道每分钟只能通过 1 列车（双向共用）。冲突时编号小的先行，大的等
+          1 分钟。站台容量不限。
+        </li>
+        <li>
+          截止分钟到达也算准点。准点 +100 分，迟到 +35 分，每次让行 −3
+          分。夜班结束时仍候车或在车上的人不得分。
+        </li>
+        <li>
+          单步看原因，直接结算看结果。编辑计划会重置演练，不会丢失已完成对比；自动播放只是展示，无需等候也能结算。
+        </li>
+      </ol>
+      <p>
+        三个人工关卡都有全员准点解。种子题不保证满分，适合比较策略。参考方案不是唯一答案。
+      </p>
+    </dialog>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

@@ -36,5 +36,81 @@
       "url": "https://hakuya-ordinary-museum.golden-berry-3772.chatgpt.site",
       "access": "public"
     }
+  },
+  {
+    "slug": "midnight-canteen",
+    "path": "demos/midnight-canteen",
+    "title": "午夜小食堂",
+    "description": "七夜小店经营：采购、菜单、定价与顾客口味共同影响现金和口碑",
+    "date": "2026-10-21",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/midnight-canteen/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-midnight-canteen.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    }
+  },
+  {
+    "slug": "rainy-letters",
+    "path": "demos/rainy-letters",
+    "title": "雨夜来信",
+    "description": "雨夜遗失信件：调查证词、连接证据、核验重建与不同结局",
+    "date": "2026-10-21",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/rainy-letters/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-rainy-letters.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    }
+  },
+  {
+    "slug": "balcony-seasons",
+    "path": "demos/balcony-seasons",
+    "title": "一平方米四季",
+    "description": "20日阳台生态：播种、浇水、天气与伴生植物的资源策略",
+    "date": "2026-10-21",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/balcony-seasons/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-balcony-seasons.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    }
+  },
+  {
+    "slug": "last-train",
+    "path": "demos/last-train",
+    "title": "末班车调度室",
+    "description": "末班地铁调度：容量、让行、换乘与期限的方案优化",
+    "date": "2026-10-21",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/last-train/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-last-train.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    }
   }
 ]

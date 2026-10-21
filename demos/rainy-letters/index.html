@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#202c2b" />
+    <title>雨夜来信 · 一场关于告别的调查</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="#">雨夜来信<span>THE LETTER IN THE RAIN</span></a>
+      <div class="header-actions">
+        <button id="guideButton">调查指南</button
+        ><button id="restart">重启雨夜 ↺</button>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">一九三四 · 南方一座虚构的城</p>
+          <h1>有些真相，<br />不该成为<span>头条。</span></h1>
+          <p class="intro">
+            展览闭馆后，一封未公开的告别信失踪了。五个人的记忆彼此冲突。你有六次调查机会，在雨停以前，决定怎样讲述这个夜晚。
+          </p>
+          <div class="case-meta">
+            <span>档案 014 / 私人告别</span><span>纯虚构 · 约 10 分钟</span>
+          </div>
+        </div>
+        <div class="letter-art" aria-hidden="true">
+          <div class="postmark">雨夜<br />21 OCT</div>
+          <div class="envelope"><span>给未能道别的人</span><i>林</i></div>
+          <p>雨会停。信呢？</p>
+        </div>
+      </section>
+      <section class="status" aria-label="调查进度">
+        <div>
+          <span class="status-label">天亮之前</span
+          ><strong id="budget"></strong>
+        </div>
+        <div>
+          <span class="status-label">听过证词</span><strong id="heard"></strong>
+        </div>
+        <div>
+          <span class="status-label">证据关联</span
+          ><strong id="linked"></strong>
+        </div>
+        <p>听证词、复看与连线免费。<br />首次打开每处线索，消耗 1 次机会。</p>
+      </section>
+      <nav class="tabs" aria-label="调查区域">
+        <button data-tab="investigate" class="active" aria-current="page">
+          01 <span>走访与搜证</span></button
+        ><button data-tab="board">
+          02 <span>证据桌</span><b id="boardCount">0</b></button
+        ><button data-tab="reconstruct">03 <span>重建雨夜</span></button>
+      </nav>
+      <section id="investigate" class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">VOICES IN THE RAIN</p>
+            <h2>五个人，五种记忆</h2>
+          </div>
+          <span>证词免费 · 点击听取</span>
+        </div>
+        <div id="witnesses" class="witnesses"></div>
+        <div class="section-heading second">
+          <div>
+            <p class="eyebrow">FOLLOW THE TRACES</p>
+            <h2>选择你要去的地方</h2>
+          </div>
+          <span>8 处线索 / 最多调查 6 处</span>
+        </div>
+        <div id="clues" class="clue-grid"></div>
+      </section>
+      <section id="board" class="panel" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">THE EVIDENCE DESK</p>
+            <h2>记忆会错，证据也需要解释。</h2>
+          </div>
+        </div>
+        <p class="explain">
+          每张已找到的证据下，勾选它能直接支持的判断。连错不会消耗机会，但结案时会被指出。没有连线的证据不能支撑重建。
+        </p>
+        <div id="boardCards"></div>
+        <section class="contradiction-section">
+          <p class="eyebrow">WHEN MEMORIES DISAGREE</p>
+          <h2>不是选谁撒谎，而是解释为什么。</h2>
+          <p class="explain">
+            结案前至少化解两组证词矛盾。先听双方，再选择因果解释，并配对已调查的证据。不同选择会让同一段证词呈现不同含义。
+          </p>
+          <div id="contradictions"></div>
+        </section>
+      </section>
+      <section id="reconstruct" class="panel" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">RECONSTRUCT THE NIGHT</p>
+            <h2>把零散的雨声，拼成一个夜晚。</h2>
+          </div>
+        </div>
+        <div class="reconstruction">
+          <div id="answers"></div>
+          <aside class="rules">
+            <span class="seal">证</span>
+            <h3>结论，不等于证明。</h3>
+            <p>三个结论都需要证据桌上的有效连线，还须化解至少两组证词矛盾。</p>
+            <p>时间可以由精确记录证明，也可以由“门房出入簿 + 校钟便条”推算。</p>
+            <p>确认信仍完好并非结案必需，却会改变你保护它的把握。</p>
+          </aside>
+        </div>
+        <button id="submit" class="primary">核对我的重建 <span>→</span></button>
+        <div id="assessment" aria-live="polite"></div>
+      </section>
+      <section id="ending" class="ending" hidden></section>
+      <footer>
+        <span>雨夜来信 · 一封信不止一个读者，也不只有一种归宿。</span
+        ><span>本作无随机真相 / 可重玩不同调查路线</span>
+      </footer>
+    </main>
+    <dialog id="detail">
+      <button class="close" aria-label="关闭详情">×</button>
+      <div id="detailContent"></div>
+      <button class="primary close-bottom">记下了，继续调查</button>
+    </dialog>
+    <dialog id="guide">
+      <button class="close" aria-label="关闭指南">×</button>
+      <p class="eyebrow">新调查员手册</p>
+      <h2>先听人说，再让纸说话。</h2>
+      <ol class="guide-list">
+        <li>
+          <b>听取证词，不扣机会。</b
+          >五个人都可能说实话，却理解了不同的时间或目的。
+        </li>
+        <li>
+          <b>选六处线索。</b
+          >首次打开消耗一次机会，之后可以随时复看。不同路线都能查明真相。
+        </li>
+        <li>
+          <b>到证据桌连线。</b
+          >把纸面事实连接到判断。一个证据可以支持多个判断，但不能凭空推断。
+        </li>
+        <li>
+          <b>化解至少两组证词矛盾。</b
+          >在证据桌对照双方证词，选择因果解释并配对材料。听过不等于理解。
+        </li>
+        <li>
+          <b>重建人物、时间和动机。</b
+          >核对不会扣机会。系统会说明缺口，不会替你选择答案。
+        </li>
+        <li>
+          <b>决定怎样讲述。</b
+          >正确重建后，你仍需在独家新闻与私人告别之间做选择。
+        </li>
+      </ol>
+      <p class="hint">
+        遇到死路？重启会清空本轮，归还六次机会。真相不变，路线和结局可以不同。本轮只保存在当前页面，不会上传。
+      </p>
+      <button class="primary close-bottom">走进雨夜 →</button>
+    </dialog>
+    <dialog id="confirm">
+      <h2>再走一遍这个雨夜？</h2>
+      <p>当前证据、连线与重建将被清空，调查机会恢复为 6 次。</p>
+      <div class="confirm-actions">
+        <button id="cancelReset">留在当前调查</button
+        ><button id="confirmReset" class="primary">开始新路线</button>
+      </div>
+    </dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

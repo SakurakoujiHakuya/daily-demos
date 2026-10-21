@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f0e5" />
+    <title>一平方米四季 · 阳台实验室</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <a class="brand" href="#">小小生活研究所 <span> / NO. 021</span></a>
+        <div class="edition">一平方米，也能装下一整个季节。</div>
+      </header>
+      <main>
+        <section class="intro">
+          <div>
+            <div class="eyebrow">A SMALL GARDEN, A SLOW EXPERIMENT</div>
+            <h1>一平方米<span>四季</span><i>✳</i></h1>
+            <p>
+              借一点阳光，种下一种可能。<br />在 20
+              天里，练习取舍，也练习重新开始。
+            </p>
+          </div>
+          <div class="season-stamp">
+            <span>阳台实验室</span><strong id="dayLabel">01 / 20</strong
+            ><small id="scenarioLabel">春日初试</small>
+          </div>
+        </section>
+        <section class="resources" aria-label="资源">
+          <div><span>可用预算</span><strong id="money"></strong></div>
+          <div><span>雨水储量</span><strong id="water"></strong></div>
+          <div><span>本季收获</span><strong id="harvests"></strong></div>
+          <div><span>今日天气</span><strong id="weather"></strong></div>
+        </section>
+        <div class="workspace">
+          <section class="garden-panel">
+            <div class="panel-title">
+              <h2>我的一平方米</h2>
+              <span>4 × 3 个种植格</span>
+            </div>
+            <div class="light-guide">
+              <span>← 靠墙微阴</span><span>向阳处 →</span>
+            </div>
+            <div id="garden" class="garden" aria-label="种植格"></div>
+            <div class="garden-caption">
+              <span>◌ 点击空格播种，点击植物查看照料</span
+              ><span>每格独立生长</span>
+            </div>
+            <div id="selected" class="selected"></div>
+            <div class="forecast-block">
+              <span class="eyebrow">未来三日 / 先看天气，再做决定</span>
+              <div id="forecast" class="forecast"></div>
+            </div>
+            <button id="next" class="next">
+              结束今日，迎接明天 <span>→</span>
+            </button>
+            <p class="tip">
+              时间只在你按下按钮时前进。第 20 天结束时自动收获成熟植物。
+            </p>
+          </section>
+          <aside>
+            <section class="seed-panel">
+              <div class="panel-title">
+                <h2>种子抽屉</h2>
+                <span>01 — SELECT</span>
+              </div>
+              <p class="muted">选一包种子，再点击空格。</p>
+              <div id="seeds"></div>
+              <button id="buyWater" class="water-buy">
+                ＋ 补充 6 升雨水 <span>¥4</span>
+              </button>
+            </section>
+            <section class="journal">
+              <div class="panel-title">
+                <h2>阳台手记</h2>
+                <span>02 — OBSERVE</span>
+              </div>
+              <div id="logs"></div>
+            </section>
+          </aside>
+        </div>
+        <section class="notes">
+          <div>
+            <span>01 / 空间</span>
+            <h3>留白也是策略</h3>
+            <p>
+              番茄占右侧两格；左列光照少一级。晴天的阴处适合萝卜和罗勒，多云时要留意健康。
+            </p>
+          </div>
+          <div>
+            <span>02 / 伴生</span>
+            <h3>好邻居，有好收成</h3>
+            <p>
+              生长 2 天的罗勒降低相邻植物耗水；同龄蜜源花让相邻番茄在生长日增加
+              ¥2 收成，最多 ¥8。
+            </p>
+          </div>
+          <div>
+            <span>03 / 恢复</span>
+            <h3>照顾，而不是完美</h3>
+            <p>
+              缺水或缺光会减 1 健康，条件合适则恢复 1
+              点。健康归零才枯萎，成熟后也需要照料。
+            </p>
+          </div>
+        </section>
+        <section class="new-season">
+          <div>
+            <h2>换一种天气，再来一季。</h2>
+            <p>相同情景与种子拥有相同天气，可以重试不同策略。</p>
+          </div>
+          <div class="restart-controls">
+            <label
+              >情景<select id="scenario">
+                <option value="gentle">春日初试</option>
+                <option value="dry">盛夏限水</option>
+                <option value="rain">秋雨之间</option>
+              </select></label
+            ><label
+              >天气种子<input
+                id="seed"
+                type="number"
+                value="17"
+                min="0"
+                max="999999" /></label
+            ><button id="restart">开启新一季 ↗</button>
+          </div>
+        </section>
+        <footer>
+          一平方米四季 · 原创微型生活模拟
+          <span>简化的虚构规则，不构成园艺建议。无需登录 · 无外部请求</span>
+        </footer>
+      </main>
+    </div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <dialog id="ending">
+      <div class="eyebrow">YOUR SEASON, IN A NUTSHELL</div>
+      <h2>这一季，你种下了可能。</h2>
+      <div id="summary"></div>
+      <button id="closeSummary">回到阳台</button>
+    </dialog>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

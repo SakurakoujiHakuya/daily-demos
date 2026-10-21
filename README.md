@@ -10,10 +10,19 @@
 | --- | --- | --- | --- |
 | 2026-10-19 | 把今天折成一首诗 | 日常场景 × 心情 × 意象，原创诗句组合、编辑并导出 PNG | [README](demos/fold-a-day/README.md) |
 | 2026-10-20 | 日常物证馆 | 为平凡物件写展签，私藏日常并导出展品海报 | [README](demos/ordinary-museum/README.md) |
+| 2026-10-21 | 午夜小食堂 | 七夜小店经营：采购、菜单、定价与顾客口味共同影响现金和口碑 | [README](demos/midnight-canteen/README.md) |
+| 2026-10-21 | 雨夜来信 | 雨夜遗失信件：调查证词、连接证据、核验重建与不同结局 | [README](demos/rainy-letters/README.md) |
+| 2026-10-21 | 一平方米四季 | 20日阳台生态：播种、浇水、天气与伴生植物的资源策略 | [README](demos/balcony-seasons/README.md) |
+| 2026-10-21 | 末班车调度室 | 末班地铁调度：容量、让行、换乘与期限的方案优化 | [README](demos/last-train/README.md) |
 
 在线体验（公开）：
 - 把今天折成一首诗：https://hakuya-fold-a-day.golden-berry-3772.chatgpt.site
 - 日常物证馆：https://hakuya-ordinary-museum.golden-berry-3772.chatgpt.site
+
+- 午夜小食堂：https://hakuya-midnight-canteen.golden-berry-3772.chatgpt.site
+- 雨夜来信：https://hakuya-rainy-letters.golden-berry-3772.chatgpt.site
+- 一平方米四季：https://hakuya-balcony-seasons.golden-berry-3772.chatgpt.site
+- 末班车调度室：https://hakuya-last-train.golden-berry-3772.chatgpt.site
 
 各项目独立部署；本作品无需登录即可访问。
 
