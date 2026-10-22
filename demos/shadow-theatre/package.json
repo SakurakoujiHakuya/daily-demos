@@ -1,0 +1,1 @@
+{"name":"shadow-theatre","version":"1.0.0","private":true,"type":"module","description":"A geometric paper-shadow puzzle","scripts":{"test":"node --test","build":"node build.mjs","start":"node server.mjs"},"engines":{"node":">=20"},"license":"MIT"}

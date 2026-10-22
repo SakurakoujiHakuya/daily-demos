@@ -14,6 +14,10 @@
 | 2026-10-21 | 雨夜来信 | 雨夜遗失信件：调查证词、连接证据、核验重建与不同结局 | [README](demos/rainy-letters/README.md) |
 | 2026-10-21 | 一平方米四季 | 20日阳台生态：播种、浇水、天气与伴生植物的资源策略 | [README](demos/balcony-seasons/README.md) |
 | 2026-10-21 | 末班车调度室 | 末班地铁调度：容量、让行、换乘与期限的方案优化 | [README](demos/last-train/README.md) |
+| 2026-10-22 | 行李里的远方 | 空间收纳与旅行取舍：旋转物品、满足需要、比较不同偏好的装箱策略 | [README](demos/suitcase-stories/README.md) |
+| 2026-10-22 | 口袋声景 | 六轨十六步生活声音编曲：A/B结构、重音、摇摆、独奏与可保存的原创声景 | [README](demos/pocket-soundscape/README.md) |
+| 2026-10-22 | 影子剧场 | 三幕光影几何谜题：移动纸偶与光源，让投影重合并探索等效解 | [README](demos/shadow-theatre/README.md) |
+| 2026-10-22 | 合租公约实验室 | 四周合租协商：分配劳动与预算，观察投票、信任与共同生活的不同结局 | [README](demos/shared-house-council/README.md) |
 
 在线体验（公开）：
 - 把今天折成一首诗：https://hakuya-fold-a-day.golden-berry-3772.chatgpt.site
@@ -23,6 +27,11 @@
 - 雨夜来信：https://hakuya-rainy-letters.golden-berry-3772.chatgpt.site
 - 一平方米四季：https://hakuya-balcony-seasons.golden-berry-3772.chatgpt.site
 - 末班车调度室：https://hakuya-last-train.golden-berry-3772.chatgpt.site
+
+- 行李里的远方：https://hakuya-suitcase-stories.golden-berry-3772.chatgpt.site
+- 口袋声景：https://hakuya-pocket-soundscape.golden-berry-3772.chatgpt.site
+- 影子剧场：https://hakuya-shadow-theatre.golden-berry-3772.chatgpt.site
+- 合租公约实验室：https://hakuya-shared-house-council.golden-berry-3772.chatgpt.site
 
 各项目独立部署；本作品无需登录即可访问。
 

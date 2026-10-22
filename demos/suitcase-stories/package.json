@@ -1,0 +1,1 @@
+{"name":"suitcase-stories","version":"1.0.0","private":true,"type":"module","license":"MIT","engines":{"node":">=20"},"scripts":{"test":"node --test test/*.test.js","build":"node build.mjs","start":"node server.mjs"}}

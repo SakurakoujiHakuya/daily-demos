@@ -112,5 +112,81 @@
       "url": "https://hakuya-last-train.golden-berry-3772.chatgpt.site",
       "access": "public"
     }
+  },
+  {
+    "slug": "suitcase-stories",
+    "path": "demos/suitcase-stories",
+    "title": "行李里的远方",
+    "description": "空间收纳与旅行取舍：旋转物品、满足需要、比较不同偏好的装箱策略",
+    "date": "2026-10-22",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/suitcase-stories/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-suitcase-stories.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    }
+  },
+  {
+    "slug": "pocket-soundscape",
+    "path": "demos/pocket-soundscape",
+    "title": "口袋声景",
+    "description": "六轨十六步生活声音编曲：A/B结构、重音、摇摆、独奏与可保存的原创声景",
+    "date": "2026-10-22",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/pocket-soundscape/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-pocket-soundscape.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    }
+  },
+  {
+    "slug": "shadow-theatre",
+    "path": "demos/shadow-theatre",
+    "title": "影子剧场",
+    "description": "三幕光影几何谜题：移动纸偶与光源，让投影重合并探索等效解",
+    "date": "2026-10-22",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/shadow-theatre/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-shadow-theatre.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    }
+  },
+  {
+    "slug": "shared-house-council",
+    "path": "demos/shared-house-council",
+    "title": "合租公约实验室",
+    "description": "四周合租协商：分配劳动与预算，观察投票、信任与共同生活的不同结局",
+    "date": "2026-10-22",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/shared-house-council/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-shared-house-council.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    }
   }
 ]

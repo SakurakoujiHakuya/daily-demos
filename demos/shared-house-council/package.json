@@ -1,0 +1,1 @@
+{"name":"shared-house-council","version":"1.0.0","private":true,"type":"module","license":"MIT","scripts":{"test":"node --test test/*.test.js","build":"node scripts/build.mjs","start":"node scripts/serve.mjs"},"engines":{"node":">=20"}}

@@ -1,0 +1,41 @@
+import {TRACKS,clone,createSong,preset,cycleCell,duration,position,activeTracks,density,rotatePattern,validateSong} from './engine.js';
+import {SoundEngine} from './audio.js';
+const $=id=>document.getElementById(id),storageKey='pocket-soundscape-v1';
+let song=preset('rain'),editing='A',history=[],running=false,absolute=0,timer=null,playhead=null,starting=false;
+const sound=new SoundEngine();
+let storageIssue='';try{const saved=localStorage.getItem(storageKey);if(saved)song=validateSong(JSON.parse(saved));}catch{storageIssue='无法读取本地记录，已打开默认声景。';}
+function feedback(text){$('feedback').textContent=text;}
+function save(){try{localStorage.setItem(storageKey,JSON.stringify(song));$('save-status').textContent='已自动保存在当前浏览器 · 导出 JSON 可带到其他设备。';}catch{$('save-status').textContent='浏览器未允许本地保存，请导出 JSON 保留作品。';}}
+function update(next,message){history.push(clone(song));if(history.length>60)history.shift();song=next;save();render();if(message)feedback(message);}
+function setting(key,value){if(song[key]===value)return;const next=clone(song);next[key]=value;update(next);}
+function render(){
+ $('title').value=song.title;for(const id of ['bpm','swing','master','pitch'])$(id).value=song[id];
+ $('bpm-value').textContent=`${song.bpm} BPM`;$('swing-value').textContent=`${Math.round(song.swing*100)}%`;$('master-value').textContent=`${Math.round(song.master*100)}%`;$('pitch-value').textContent=`${song.pitch>0?'+':''}${song.pitch} 半音`;$('arrangement').value=song.arrangement;
+ for(const p of ['A','B'])$('tab-'+p).setAttribute('aria-pressed',String(p===editing));$('copy').textContent=`复制 ${editing} → ${editing==='A'?'B':'A'}`;$('density').textContent=`${editing} 段 · ${density(song,editing)} / 96 格已点亮`;$('undo').disabled=!history.length;
+ const enabled=activeTracks(song);document.querySelectorAll('.seq-row[data-track]').forEach((row,t)=>{row.classList.toggle('muted',!enabled[t]);row.querySelector('input').value=song.tracks[t].volume;for(const type of ['mute','solo'])row.querySelector(`[data-control="${type}"]`).setAttribute('aria-pressed',String(song.tracks[t][type]));row.querySelectorAll('.step').forEach((cell,s)=>{const v=song.patterns[editing][t][s];cell.classList.toggle('on',v===1);cell.classList.toggle('strong',v===2);cell.textContent=v===2?'◆':v===1?'·':'';cell.setAttribute('aria-label',`${editing} 段，${TRACKS[t].name}，第 ${s+1} 格，${['留白','轻触','重音'][v]}`);cell.setAttribute('aria-pressed',String(v>0));});});
+ sound.setVolume(song.master);drawPlayhead();
+}
+function drawPlayhead(){document.querySelectorAll('.step').forEach(cell=>cell.classList.toggle('playing',!!playhead&&playhead.pattern===editing&&Number(cell.dataset.step)===playhead.step));}
+function createGrid(){const grid=$('sequencer'),head=document.createElement('div');head.className='seq-row';head.append(document.createElement('span'));for(let i=0;i<16;i++){const n=document.createElement('span');n.className='beat-number'+(i%4===0?' down':'');n.textContent=String(i+1).padStart(2,'0');head.append(n);}grid.append(head);
+ TRACKS.forEach((track,t)=>{const row=document.createElement('div');row.className='seq-row';row.dataset.track=t;row.style.setProperty('--track',track.color);const label=document.createElement('div');label.className='track-label';const name=document.createElement('span');name.className='track-name';name.textContent=`${track.icon} ${track.name}`;name.title=track.note;label.append(name);const controls=document.createElement('div');controls.className='track-controls';for(const [kind,text,desc] of [['mute','M','静音'],['solo','S','独奏']]){const b=document.createElement('button');b.textContent=text;b.dataset.control=kind;b.setAttribute('aria-label',`${track.name} ${desc}`);b.title=desc;b.onclick=()=>{const next=clone(song);next.tracks[t][kind]=!next.tracks[t][kind];update(next,`${track.name}：${next.tracks[t][kind]?'开启':'关闭'}${desc}`);};controls.append(b);}label.append(controls);const volume=document.createElement('input');volume.type='range';volume.min=0;volume.max=1;volume.step=.05;volume.className='track-volume';volume.setAttribute('aria-label',`${track.name} 音量`);volume.onchange=()=>{const next=clone(song);next.tracks[t].volume=Number(volume.value);update(next,`${track.name}音量 ${Math.round(next.tracks[t].volume*100)}%`);};label.append(volume);row.append(label);
+ for(let s=0;s<16;s++){const cell=document.createElement('button');cell.className='step'+(s%4===0?' quarter':'');cell.dataset.step=s;cell.dataset.track=t;cell.onclick=()=>update(cycleCell(song,editing,t,s),`${track.name}第 ${s+1} 格：${['留白','轻触','重音'][(song.patterns[editing][t][s]+1)%3]}`);cell.onkeydown=e=>{let nt=t,ns=s;if(e.key==='ArrowRight')ns=(s+1)%16;else if(e.key==='ArrowLeft')ns=(s+15)%16;else if(e.key==='ArrowDown')nt=(t+1)%6;else if(e.key==='ArrowUp')nt=(t+5)%6;else return;e.preventDefault();document.querySelector(`.step[data-track="${nt}"][data-step="${ns}"]`).focus();};row.append(cell);}grid.append(row);});
+}
+function stop(reset=false){running=false;clearTimeout(timer);timer=null;sound.silence();playhead=null;if(reset)absolute=0;$('play').textContent='▶ 开始聆听';$('position').textContent=`已暂停 · 第 ${Math.floor(absolute/16)+1} 小节`;drawPlayhead();}
+function tick(){if(!running)return;const pos=position(absolute,song.arrangement);playhead=pos;const enabled=activeTracks(song);if(!$('visual').checked)for(let t=0;t<6;t++){const v=song.patterns[pos.pattern][t][pos.step];if(v&&enabled[t])sound.hit(t,v,song.tracks[t].volume,song.pitch);}drawPlayhead();$('position').textContent=`播放 ${pos.pattern} · 第 ${pos.bar+1} 小节 · ${String(pos.step+1).padStart(2,'0')} / 16`;const delay=duration(song.bpm,song.swing,pos.step)*1000;absolute++;timer=setTimeout(tick,delay);}
+$('play').onclick=async()=>{if(starting)return;if(running){stop();return;}starting=true;$('play').disabled=true;try{if(!$('visual').checked){await sound.enable();sound.setVolume(song.master);$('audio-status').textContent='音频已开启 · 六种原创合成音色';}else $('audio-status').textContent='仅视觉模式 · 不播放声音';running=true;$('play').textContent='Ⅱ 暂停';tick();}catch(error){$('audio-status').textContent='音频未能开启，请选择「仅视觉」后播放。';feedback(error.message);}finally{starting=false;$('play').disabled=false;}};
+$('stop').onclick=()=>{stop(true);$('position').textContent='待播放 · 第 1 小节';};
+$('visual').onchange=()=>{if(running)stop();$('audio-status').textContent=$('visual').checked?'仅视觉模式 · 点击播放观察节拍':'点击播放开启声音';};
+for(const id of ['bpm','swing','master','pitch'])$(id).onchange=()=>setting(id,Number($(id).value));
+$('title').onchange=()=>setting('title',$('title').value.trim()||'无题声景');
+$('arrangement').onchange=()=>{setting('arrangement',$('arrangement').value);absolute=0;feedback('循环顺序已修改，下一拍从第一段开始。');};
+for(const p of ['A','B'])$('tab-'+p).onclick=()=>{editing=p;render();feedback(`正在编辑 ${p} 段；循环播放顺序保持不变。`);};
+$('copy').onclick=()=>{const next=clone(song),to=editing==='A'?'B':'A';next.patterns[to]=clone(next.patterns[editing]);update(next,`已复制 ${editing} → ${to}。切换到 ${to} 修改它的回答。`);};
+$('shift').onclick=()=>update(rotatePattern(song,editing),`${editing} 段已向右移动一格。`);
+$('clear').onclick=()=>{const next=clone(song);next.patterns[editing]=createSong().patterns.A;update(next,`${editing} 段已清空，可以撤销。`);};
+$('undo').onclick=()=>{if(history.length){song=history.pop();save();render();feedback('已撤销上一步。');}};
+for(const btn of document.querySelectorAll('[data-preset]'))btn.onclick=()=>{stop(true);update(preset(btn.dataset.preset),'已载入起点，上一首可以撤销。');};
+$('reset').onclick=()=>{stop(true);update(createSong(),'空白声景已就绪，上一首可以撤销。');};
+$('export').onclick=()=>{const blob=new Blob([JSON.stringify(song,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='pocket-soundscape.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);feedback('已导出声景数据（不是音频文件）。');};
+$('import').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>65536)throw Error('文件超过 64 KB，请选择声景 JSON。');const next=validateSong(JSON.parse(await file.text()));stop(true);update(next,'声景已导入，可撤销。');}catch(error){feedback(`导入失败：${error.message}`);}finally{e.target.value='';}};
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&running){stop();$('audio-status').textContent='切换到后台已自动暂停，点击播放继续。';}});
+createGrid();render();if(storageIssue)$('save-status').textContent=storageIssue;
