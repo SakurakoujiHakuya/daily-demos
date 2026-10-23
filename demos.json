@@ -16,7 +16,10 @@
     "deployment": {
       "url": "https://hakuya-fold-a-day.golden-berry-3772.chatgpt.site",
       "access": "public"
-    }
+    },
+    "category": "文学",
+    "interaction": "选择场景、心情与意象，再亲手改写一首诗。",
+    "accent": "#A65D4E"
   },
   {
     "slug": "ordinary-museum",
@@ -35,7 +38,10 @@
     "deployment": {
       "url": "https://hakuya-ordinary-museum.golden-berry-3772.chatgpt.site",
       "access": "public"
-    }
+    },
+    "category": "生活",
+    "interaction": "给一件普通物品写展签，收藏自己的日常。",
+    "accent": "#9A774D"
   },
   {
     "slug": "midnight-canteen",
@@ -54,7 +60,10 @@
     "deployment": {
       "url": "https://hakuya-midnight-canteen.golden-berry-3772.chatgpt.site",
       "access": "public"
-    }
+    },
+    "category": "策略",
+    "interaction": "采购食材、安排菜单，亲手经营七个夜晚。",
+    "accent": "#D88A55"
   },
   {
     "slug": "rainy-letters",
@@ -73,7 +82,10 @@
     "deployment": {
       "url": "https://hakuya-rainy-letters.golden-berry-3772.chatgpt.site",
       "access": "public"
-    }
+    },
+    "category": "文学",
+    "interaction": "调查证词、连接证据，重建一封信的去向。",
+    "accent": "#637E8F"
   },
   {
     "slug": "balcony-seasons",
@@ -92,7 +104,10 @@
     "deployment": {
       "url": "https://hakuya-balcony-seasons.golden-berry-3772.chatgpt.site",
       "access": "public"
-    }
+    },
+    "category": "生活",
+    "interaction": "播种、浇水与安排邻居，照料二十天阳台。",
+    "accent": "#759363"
   },
   {
     "slug": "last-train",
@@ -111,7 +126,10 @@
     "deployment": {
       "url": "https://hakuya-last-train.golden-berry-3772.chatgpt.site",
       "access": "public"
-    }
+    },
+    "category": "策略",
+    "interaction": "重排发车和停站，让乘客赶上最后一班车。",
+    "accent": "#D5A74C"
   },
   {
     "slug": "suitcase-stories",
@@ -130,7 +148,10 @@
     "deployment": {
       "url": "https://hakuya-suitcase-stories.golden-berry-3772.chatgpt.site",
       "access": "public"
-    }
+    },
+    "category": "生活",
+    "interaction": "旋转、移动与取舍，把想带的远方装进箱子。",
+    "accent": "#B7835B"
   },
   {
     "slug": "pocket-soundscape",
@@ -149,7 +170,10 @@
     "deployment": {
       "url": "https://hakuya-pocket-soundscape.golden-berry-3772.chatgpt.site",
       "access": "public"
-    }
+    },
+    "category": "创作",
+    "interaction": "点亮十六步节奏，把生活声音编成一段声景。",
+    "accent": "#819A96"
   },
   {
     "slug": "shadow-theatre",
@@ -168,7 +192,10 @@
     "deployment": {
       "url": "https://hakuya-shadow-theatre.golden-berry-3772.chatgpt.site",
       "access": "public"
-    }
+    },
+    "category": "创作",
+    "interaction": "移动纸偶和光源，让影子与目标轮廓重合。",
+    "accent": "#9B83A5"
   },
   {
     "slug": "shared-house-council",
@@ -187,7 +214,10 @@
     "deployment": {
       "url": "https://hakuya-shared-house-council.golden-berry-3772.chatgpt.site",
       "access": "public"
-    }
+    },
+    "category": "策略",
+    "interaction": "分配劳动与预算，试着让四位室友达成公约。",
+    "accent": "#B17B73"
   },
   {
     "slug": "kite-wind",
@@ -206,7 +236,10 @@
     "deployment": {
       "url": "https://hakuya-kite-wind.golden-berry-3772.chatgpt.site",
       "access": "public"
-    }
+    },
+    "category": "生活",
+    "interaction": "牵线、收放与稳住，借风接住四枚风笺。",
+    "accent": "#729B96"
   },
   {
     "slug": "resist-dye",
@@ -225,7 +258,10 @@
     "deployment": {
       "url": "https://hakuya-resist-dye.golden-berry-3772.chatgpt.site",
       "access": "public"
-    }
+    },
+    "category": "创作",
+    "interaction": "画蜡、折叠与分层浸染，留下自己的布样。",
+    "accent": "#567DA9"
   },
   {
     "slug": "erasure-poetry",
@@ -244,7 +280,10 @@
     "deployment": {
       "url": "https://hakuya-erasure-poetry.golden-berry-3772.chatgpt.site",
       "access": "public"
-    }
+    },
+    "category": "文学",
+    "interaction": "保留几个词、重新分行，在删削里写出诗。",
+    "accent": "#9C7669"
   },
   {
     "slug": "laundry-day",
@@ -263,6 +302,9 @@
     "deployment": {
       "url": "https://hakuya-laundry-day.golden-berry-3772.chatgpt.site",
       "access": "public"
-    }
+    },
+    "category": "生活",
+    "interaction": "安排洗涤与晾晒，让衣物赶在赴约前干透。",
+    "accent": "#82A5A7"
   }
 ]
