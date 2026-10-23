@@ -1,0 +1,18 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {blank,valid,paint,dip,dewax,mirrors,COMMISSIONS,assess,svg} from '../src/engine.js';
+test('blank is valid independent cloth',()=>{let a=blank(),b=blank();a.dye[0]=2;assert.equal(b.dye[0],0);assert.ok(valid(b));});
+test('reject malformed persisted states',()=>{assert.equal(valid({}),false);assert.equal(valid({...blank(),dye:Array(256).fill(7)}),false);assert.equal(valid({...blank(),wax:Array(256).fill(1)}),false);assert.equal(valid({...blank(),dips:-1}),false);});
+test('wax prevents dye while other cells darken',()=>{let b=blank(),s=dip(paint(b,0));assert.equal(s.dye[0],0);assert.equal(s.dye[1],1);assert.equal(b.wax[0],false);});
+test('wax preserves existing blue not resets it',()=>{let s=dip(blank());s=dip(paint(s,0));assert.equal(s.dye[0],1);assert.equal(s.dye[1],2);});
+test('dewax allows future layers',()=>{let s=dip(dewax(dip(paint(blank(),0))));assert.equal(s.dye[0],1);assert.equal(s.dye[1],2);});
+test('dye saturates at four and counts dips',()=>{let s=blank();for(let i=0;i<8;i++)s=dip(s);assert.equal(s.dye[0],4);assert.equal(s.dips,8);});
+test('symmetry modes deterministic',()=>{assert.deepEqual(mirrors(1,'vertical'),[1,14]);assert.deepEqual(mirrors(1,'horizontal'),[1,241]);assert.deepEqual(mirrors(1,'four'),[1,14,241,254]);assert.deepEqual(mirrors(-1),[]);});
+test('wide brush clipped to cloth',()=>{assert.equal(paint(blank(),0,true,'none',1).wax.filter(Boolean).length,4);assert.equal(paint(blank(),17,true,'none',1).wax.filter(Boolean).length,9);});
+test('erase mirrors and immutable input',()=>{let s=paint(blank(),0,true,'four');let n=paint(s,0,false,'four');assert.equal(s.wax.filter(Boolean).length,4);assert.equal(n.wax.filter(Boolean).length,0);});
+test('invalid paint does not mutate',()=>assert.deepEqual(paint(blank(),256),blank()));
+test('stream solvable in two layers',()=>{let s=blank();for(let i=0;i<256;i++)if(i%16%4<2)s=paint(s,i);s=dewax(dip(dip(s)));assert.equal(assess(s,COMMISSIONS[0].target,2).complete,true);});
+test('window requires staged wax and is solvable',()=>{let s=blank();for(let i=0;i<256;i++)if(COMMISSIONS[1].target[i]===0)s=paint(s,i);s=dip(s);for(let i=0;i<256;i++)if(COMMISSIONS[1].target[i]===1)s=paint(s,i);s=dewax(dip(s));assert.equal(assess(s,COMMISSIONS[1].target,2).complete,true);});
+test('cross can use fourfold strokes',()=>{let s=blank();for(let r=0;r<8;r++)for(let c=0;c<8;c++)if(r>=6||c>=6)s=paint(s,r*16+c,true,'four');s=dewax(dip(dip(dip(s))));assert.equal(assess(s,COMMISSIONS[2].target,3).complete,true);});
+test('matching color with wax still not finished',()=>{let s={...blank(),dye:[...COMMISSIONS[0].target]};s=paint(s,0);let a=assess(s,COMMISSIONS[0].target,2);assert.equal(a.exact,256);assert.equal(a.complete,false);});
+test('wrong sequence gives measurably different outcome',()=>{const a=dip(paint(blank(),0)),b=paint(dip(blank()),0);assert.notDeepEqual(a.dye,b.dye);});
+test('export contains only safe fixed color vector art',()=>{let out=svg(blank());assert.equal((out.match(/<rect /g)||[]).length,257);assert.match(out,/xmlns="http:\/\/www.w3.org\/2000\/svg"/);assert.ok(!out.includes('<script'));});
+test('no mask and overdye contrast against target',()=>{let s=blank();for(let i=0;i<4;i++)s=dip(s);assert.equal(assess(s,COMMISSIONS[0].target,2).exact,0);assert.equal(assess(s,COMMISSIONS[0].target,2).complete,false);});

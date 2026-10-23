@@ -1,0 +1,1 @@
+{"name":"erasure-poetry","version":"1.0.0","private":true,"type":"module","scripts":{"test":"node --test","build":"node scripts/build.mjs","start":"node scripts/serve.mjs"},"engines":{"node":">=20"},"license":"MIT"}

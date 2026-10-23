@@ -188,5 +188,81 @@
       "url": "https://hakuya-shared-house-council.golden-berry-3772.chatgpt.site",
       "access": "public"
     }
+  },
+  {
+    "slug": "kite-wind",
+    "path": "demos/kite-wind",
+    "title": "借风放纸鸢",
+    "description": "借助确定性风场牵线、收放与减压，在三种风况中优化四枚风笺的路线",
+    "date": "2026-10-23",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/kite-wind/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-kite-wind.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    }
+  },
+  {
+    "slug": "resist-dye",
+    "path": "demos/resist-dye",
+    "title": "蓝染实验室",
+    "description": "画蜡、折叠与分层浸染，完成三种防染委托或创作独一块布样",
+    "date": "2026-10-23",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/resist-dye/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-resist-dye.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    }
+  },
+  {
+    "slug": "erasure-poetry",
+    "path": "demos/erasure-poetry",
+    "title": "留白编辑部",
+    "description": "从三篇原创散文中逐词删削、重新分行，在约束与自由写作中留下另一种叙事",
+    "date": "2026-10-23",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/erasure-poetry/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-erasure-poetry.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    }
+  },
+  {
+    "slug": "laundry-day",
+    "path": "demos/laundry-day",
+    "title": "晴天洗衣计划",
+    "description": "安排洗衣批次与晾晒时序，在天气、材质、截止时间与用电之间找到可行策略",
+    "date": "2026-10-23",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/laundry-day/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-laundry-day.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    }
   }
 ]

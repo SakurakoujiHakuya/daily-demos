@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {blank,paint,dip} from '../src/engine.js';import {record,undo,redo} from '../src/history.js';
+test('undo restores full wax stroke and dye layer then redo',()=>{let a=blank(),b=paint(paint(a,0),1),c=dip(b),past=record(record([],a),b);let u=undo(c,past,[]);assert.deepEqual(u.state,b);let v=undo(u.state,u.past,u.future);assert.deepEqual(v.state,a);let r=redo(v.state,v.past,v.future);assert.deepEqual(r.state,b);let q=redo(r.state,r.past,r.future);assert.deepEqual(q.state,c);});
+test('history snapshots independent and bounded',()=>{let s=blank(),h=[];for(let i=0;i<100;i++)h=record(h,s);s.dye[0]=3;assert.equal(h.length,80);assert.equal(h[0].dye[0],0);});
+test('empty history safe no-op',()=>{let s=blank();assert.deepEqual(undo(s,[],[]).state,s);assert.deepEqual(redo(s,[],[]).state,s);});

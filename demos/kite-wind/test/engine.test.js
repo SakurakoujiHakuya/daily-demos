@@ -1,0 +1,25 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {SCENARIOS,initialState,currentWind,step,score,restoreState} from '../src/engine.js';
+test('three distinct wind scenarios with four goals',()=>{assert.equal(Object.keys(SCENARIOS).length,3);for(const c of Object.values(SCENARIOS))assert.equal(c.targets.length,4);});
+test('invalid scenario defaults safely',()=>assert.equal(initialState('bad').scenario,'meadow'));
+test('forecast repeats deterministically',()=>{const s=initialState();assert.deepEqual(currentWind(s,4),currentWind(s));});
+test('left and right produce opposite effects',()=>{const s=initialState();assert.equal(step(s,'left').x,43);assert.equal(step(s,'right').x,57);});
+test('release raises line and altitude',()=>{const s=step(initialState(),'release');assert.equal(s.line,38);assert.equal(s.y,22);});
+test('reel lowers altitude and increases tension',()=>{const a=initialState(),s=step(a,'reel');assert.ok(s.y<a.y);assert.ok(s.tension>a.tension);});
+test('hold recovers energy and eases pull',()=>{const a={...initialState(),energy:40,tension:70},s=step(a,'hold');assert.equal(s.energy,49);assert.ok(s.tension<70);});
+test('state input not mutated',()=>{const a=initialState(),raw=JSON.stringify(a);step(a,'release');assert.equal(JSON.stringify(a),raw);});
+test('insufficient energy gives feedback without turn',()=>{const s=step({...initialState(),energy:0},'release');assert.equal(s.turn,0);assert.match(s.feedback,/稳住/);});
+test('target proximity captures in order',()=>{const s=step({...initialState(),x:35,y:29,line:50},'hold');assert.equal(s.caught.length,1);});
+test('later target cannot be collected out of order',()=>{const s=step({...initialState(),x:65,y:47,line:70},'hold');assert.equal(s.caught.length,0);});
+test('winning terminal cannot advance',()=>{const s=step({...initialState(),x:62,y:83,line:100,caught:[1,2,3]},'hold');assert.equal(s.status,'won');assert.equal(step(s,'left'),s);});
+test('three high-tension beats break line',()=>{let s={...initialState('coast'),tension:100};for(let i=0;i<3;i++)s=step(s,'reel');assert.equal(s.status,'broken');});
+test('release relieves accumulated strain',()=>{let s={...initialState(),tension:90,strain:2};s=step(s,'release');assert.equal(s.strain,0);assert.equal(s.status,'flying');});
+test('turn limit yields sunset not endless play',()=>{const s=step({...initialState(),turn:64},'hold');assert.equal(s.status,'sunset');});
+test('coordinates energy and tension remain bounded',()=>{for(const id of Object.keys(SCENARIOS)){let s=initialState(id);for(let i=0;i<100;i++){s=step(s,['left','release','reel','hold','right'][i%5]);assert.ok(s.x>=5&&s.x<=95&&s.y>=4&&s.y<=94);assert.ok(s.energy>=0&&s.energy<=100&&s.tension>=0&&s.tension<=100);}}});
+test('save restoration rejects corrupt data',()=>{assert.equal(restoreState('bad'),null);assert.equal(restoreState(JSON.stringify({...initialState(),x:NaN})),null);assert.equal(restoreState(JSON.stringify({...initialState(),x:999})),null);assert.deepEqual(restoreState(JSON.stringify(initialState())),initialState());});
+test('score rewards completed goals and fewer moves',()=>{assert.ok(score({...initialState(),caught:[1]})>score(initialState()));assert.ok(score({...initialState(),status:'won',turn:10})>score({...initialState(),status:'won',turn:40}));});
+test('unknown action rejected',()=>assert.throws(()=>step(initialState(),'hack')));
+const solutions={meadow:['left','release','left','release','release','right','right','release','right','release','left','reel','left','reel','reel','left','reel','release','release','release','right','release','right','release','right','right'],coast:['right','release','release','release','release','left','left','release','left','left','right','reel','right','right','reel','right','hold','right','hold','right','hold','left','hold','reel','hold','reel','release','hold','release','release','left','release','release','left','left'],dusk:['release','left','left','release','release','release','right','release','right','right','release','release','right','left','reel','left','reel','left','reel','left','reel','release','release','release','right','release','right','release','right','release','right']};
+for(const[id,actions]of Object.entries(solutions))test(`${id}: complete legal route wins from initial state`,()=>{let s=initialState(id);for(const a of actions){assert.equal(s.status,'flying');s=step(s,a);}assert.equal(s.status,'won');assert.equal(s.caught.length,4);assert.equal(s.turn,actions.length);});
+test('coast repeated reeling fails from initial state',()=>{let s=initialState('coast');for(let i=0;i<20&&s.status==='flying';i++)s=step(s,'reel');assert.equal(s.status,'broken');});
+
+test('inherited object keys are not valid scenarios',()=>{assert.equal(initialState('toString').scenario,'meadow');assert.equal(restoreState(JSON.stringify({...initialState(),scenario:'__proto__'})),null);});

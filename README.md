@@ -19,6 +19,11 @@
 | 2026-10-22 | 影子剧场 | 三幕光影几何谜题：移动纸偶与光源，让投影重合并探索等效解 | [README](demos/shadow-theatre/README.md) |
 | 2026-10-22 | 合租公约实验室 | 四周合租协商：分配劳动与预算，观察投票、信任与共同生活的不同结局 | [README](demos/shared-house-council/README.md) |
 
+| 2026-10-23 | 借风放纸鸢 | 借助确定性风场牵线、收放与减压，在三种风况中优化四枚风笺的路线 | [README](demos/kite-wind/README.md) |
+| 2026-10-23 | 蓝染实验室 | 画蜡、折叠与分层浸染，完成三种防染委托或创作独一块布样 | [README](demos/resist-dye/README.md) |
+| 2026-10-23 | 留白编辑部 | 从三篇原创散文中逐词删削、重新分行，在约束与自由写作中留下另一种叙事 | [README](demos/erasure-poetry/README.md) |
+| 2026-10-23 | 晴天洗衣计划 | 安排洗衣批次与晾晒时序，在天气、材质、截止时间与用电之间找到可行策略 | [README](demos/laundry-day/README.md) |
+
 在线体验（公开）：
 - 把今天折成一首诗：https://hakuya-fold-a-day.golden-berry-3772.chatgpt.site
 - 日常物证馆：https://hakuya-ordinary-museum.golden-berry-3772.chatgpt.site
@@ -32,6 +37,11 @@
 - 口袋声景：https://hakuya-pocket-soundscape.golden-berry-3772.chatgpt.site
 - 影子剧场：https://hakuya-shadow-theatre.golden-berry-3772.chatgpt.site
 - 合租公约实验室：https://hakuya-shared-house-council.golden-berry-3772.chatgpt.site
+
+- 借风放纸鸢：https://hakuya-kite-wind.golden-berry-3772.chatgpt.site
+- 蓝染实验室：https://hakuya-resist-dye.golden-berry-3772.chatgpt.site
+- 留白编辑部：https://hakuya-erasure-poetry.golden-berry-3772.chatgpt.site
+- 晴天洗衣计划：https://hakuya-laundry-day.golden-berry-3772.chatgpt.site
 
 各项目独立部署；本作品无需登录即可访问。
 
