@@ -1,18 +1,7 @@
 import {SCENARIOS,PROGRAMS,WEATHER,simulate,validateBatch,hour} from './engine.js';
-const $=s=>document.querySelector(s),key='hakuya-laundry-v1';let store={scenario:'sunny',plans:{},best:{}},selected=new Set(),undo=[],redo=[],result=null,serial=0;
-try{const saved=JSON.parse(localStorage.getItem(key));if(saved&&SCENARIOS.some(s=>s.id===saved.scenario)&&saved.plans&&typeof saved.plans==='object')store={...store,...saved};}catch{}
-// Stored drafts are treated as data: accept only known fields and valid batch shapes.
-for(const day of SCENARIOS){
- const clean=[];
- const raw=Array.isArray(store.plans[day.id])?store.plans[day.id]:[];
- for(const [i,b] of raw.entries()){
-  if(!b||!Array.isArray(b.items))continue;
-  const normalized={id:`saved-${i}`,label:`第${i+1}批`,items:b.items.filter(x=>typeof x==='string'),program:b.program,start:b.start,dry:b.dry,dryStart:b.dryStart};
-  if(!validateBatch(day,clean,normalized).length)clean.push(normalized);
- }
- store.plans[day.id]=clean;
-}
-if(!store.best||typeof store.best!=='object')store.best={};
+import {normalizeStore} from './storage.js';
+const $=s=>document.querySelector(s),key='hakuya-laundry-v1';let store=normalizeStore(null),selected=new Set(),undo=[],redo=[],result=null,serial=0;
+try{store=normalizeStore(JSON.parse(localStorage.getItem(key)));}catch{}
 const scenario=()=>SCENARIOS.find(s=>s.id===store.scenario);const plan=()=>Array.isArray(store.plans[store.scenario])?store.plans[store.scenario]:[];
 function save(){try{localStorage.setItem(key,JSON.stringify(store));}catch{$('#message').textContent='浏览器无法保存，本次仍可继续游玩。';}}
 function mutate(next){undo.push(JSON.stringify(plan()));redo=[];store.plans[store.scenario]=next;result=null;$('#report').hidden=true;save();render();}

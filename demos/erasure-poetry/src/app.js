@@ -1,6 +1,7 @@
 import {SOURCES,emptyState,normalizeState,toggleToken,setRange,toggleBreak,linesOf,assess,sampleState,exportSvg,createHistory,commitHistory,undoHistory,redoHistory} from './engine.js';
+import {normalizeStore} from './persistence.js';
 const $=id=>document.getElementById(id),KEY='erasure-poetry-v1';
-let data={auto:{},drafts:[],current:'station'},storageOK=true;try{const v=JSON.parse(localStorage.getItem(KEY)||'null');if(v&&typeof v==='object'){data.auto=v.auto&&typeof v.auto==='object'?v.auto:{};data.drafts=Array.isArray(v.drafts)?v.drafts.filter(x=>x&&typeof x==='object').slice(0,12):[];data.current=SOURCES.some(s=>s.id===v.current)?v.current:'station';}}catch{storageOK=false;}
+let data=normalizeStore(null),storageOK=true;try{data=normalizeStore(JSON.parse(localStorage.getItem(KEY)||'null'));}catch{storageOK=false;}
 let state=normalizeState(data.auto[data.current]?.state||emptyState(data.current)),history=createHistory(state),anchor=null,mode='commission',toastTimer;
 $('title').value=String(data.auto[state.sourceId]?.title||'未命名的留白').slice(0,30);
 for(const s of SOURCES){const opt=document.createElement('option');opt.value=s.id;opt.textContent=s.title;$('source').append(opt);}

@@ -30,3 +30,4 @@ test('invalid program and dry method rejected',()=>{const b=makeBatch(white,0);b
 test('deadline equality is on time',()=>{const r=simulate(cloud,[makeBatch(white,0,'quick','line',1)]);assert.equal(r.results.shirt.ready,4);assert.equal(r.results.shirt.state,'ready')});
 test('hour formats day endpoint',()=>{assert.equal(hour(0),'08:00');assert.equal(hour(12),'20:00')});
 test('engine handles invalid plan without crash',()=>{const b=makeBatch(white,0);b.program='bad';const r=simulate(sun,[b]);assert.ok(r.errors.length);assert.equal(r.complete,false)});
+test('inherited program names are invalid and never produce NaN energy',()=>{for(const program of ['constructor','toString','__proto__']){const b={...makeBatch(white,0),program};assert.ok(validateBatch(sun,[],b).includes('洗涤程序无效'));const r=simulate(sun,[b]);assert.equal(r.energy,0);assert.equal(r.results.shirt.state,'invalid');}});

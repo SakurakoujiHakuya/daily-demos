@@ -11,7 +11,7 @@ export function validateBatch(scenario,plan,batch,ignoreId){
  if(list.some(c=>c.delicate)&&batch.program!=='gentle')errors.push('羊毛围巾必须用轻柔洗');
  if(list.some(c=>c.delicate)&&batch.dry==='dryer')errors.push('羊毛围巾不能烘干，请选自然晾晒');
  if(batch.dry==='dryer'&&list.reduce((a,c)=>a+c.weight,0)>4)errors.push('烘干机最多承重 4 kg');
- const p=PROGRAMS[batch.program];if(!p)errors.push('洗涤程序无效');
+ const p=Object.hasOwn(PROGRAMS,batch.program)?PROGRAMS[batch.program]:null;if(!p)errors.push('洗涤程序无效');
  if(!['line','dryer'].includes(batch.dry))errors.push('干燥方式无效');
  if(!Number.isInteger(batch.start)||batch.start<0||batch.start+(p?.duration||1)>12)errors.push('洗涤时间须在 08:00—20:00 内');
  if(!Number.isInteger(batch.dryStart)||batch.dryStart<batch.start+(p?.duration||1)||batch.dryStart>=12)errors.push('晾晒或烘干必须安排在洗完之后、20:00 之前');

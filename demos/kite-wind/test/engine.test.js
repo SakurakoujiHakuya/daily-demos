@@ -23,3 +23,30 @@ for(const[id,actions]of Object.entries(solutions))test(`${id}: complete legal ro
 test('coast repeated reeling fails from initial state',()=>{let s=initialState('coast');for(let i=0;i<20&&s.status==='flying';i++)s=step(s,'reel');assert.equal(s.status,'broken');});
 
 test('inherited object keys are not valid scenarios',()=>{assert.equal(initialState('toString').scenario,'meadow');assert.equal(restoreState(JSON.stringify({...initialState(),scenario:'__proto__'})),null);});
+
+test('opening hint follows first target direction in every scenario',()=>{
+  for(const [id,scenario] of Object.entries(SCENARIOS)) {
+    const direction=scenario.targets[0].x<50?'左':scenario.targets[0].x>50?'右':'正';
+    assert.ok(initialState(id).feedback.includes(`${direction}前方`));
+  }
+  assert.ok(initialState('coast').feedback.includes('右前方'));
+});
+
+test('saved turn and strain must be integers',()=>{
+  for(const patch of [{turn:0.5},{strain:0.5}])assert.equal(restoreState(JSON.stringify({...initialState(),...patch})),null);
+});
+test('saved capture turns must be positive integers in ascending played order',()=>{
+  for(const caught of [[0],[1.5],[6],[2,2],[3,2],[-1]]) {
+    assert.equal(restoreState(JSON.stringify({...initialState(),turn:5,caught})),null);
+  }
+});
+test('every intermediate real solution save restores unchanged',()=>{
+  for(const [id,actions] of Object.entries(solutions)) {
+    let state=initialState(id);
+    assert.deepEqual(restoreState(JSON.stringify(state)),state);
+    for(const action of actions) {
+      state=step(state,action);
+      assert.deepEqual(restoreState(JSON.stringify(state)),state);
+    }
+  }
+});
