@@ -1,0 +1,33 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {SCENARIOS,PEOPLE,MAX_TICKS,createState,act,undo,stats,neighbors,restore,label,play} from '../src/engine.js';
+const steps={bridge:[5,0,2,4,2,3],lantern:[2,0,4,6,2,5],library:[7,7,7,0,0,0]};
+const verify=c=>c.sources.filter(x=>x.valid).map(x=>({type:'inspect',source:x.id}));
+const finish=s=>{while(!s.ended)s=act(s,{type:'wait'}).state;return s;};
+test('fresh independent state',()=>{const a=createState(),b=createState();a.beliefs[0]=0;assert.equal(b.beliefs[0],-70);assert.equal(b.ink,6)});
+test('unknown scenario rejected',()=>assert.throws(()=>createState('bad')));
+test('publication requires two sources',()=>{const s=createState();const r=act(s,{type:'publish',node:7});assert.ok(r.error);assert.strictEqual(r.state,s)});
+test('old source is not evidence',()=>{const s=act(createState(),{type:'inspect',source:'archive'}).state;assert.equal(s.evidence.length,0);assert.equal(s.inspected.length,1)});
+test('cannot inspect duplicate source',()=>{const s=act(createState(),{type:'inspect',source:'notice'}).state;assert.ok(act(s,{type:'inspect',source:'notice'}).error)});
+test('unknown source does not consume tick',()=>{const r=act(createState(),{type:'inspect',source:'bad'});assert.ok(r.error);assert.equal(r.state.tick,0)});
+test('node bounds rejected',()=>{for(const n of [-1,8,1.5,null])assert.ok(act(createState(),{type:'listen',node:n}).error)});
+test('unknown action rejected',()=>assert.ok(act(createState(),{type:'hack'}).error));
+test('listen raises trust and does not consume paper',()=>{const s=act(createState(),{type:'listen',node:0}).state;assert.equal(s.trust,74);assert.equal(s.ink,6);assert.equal(s.tick,1)});
+test('unverified reassurance loses trust and consumes paper',()=>{const s=act(createState(),{type:'reassure',node:0}).state;assert.equal(s.trust,58);assert.equal(s.ink,5)});
+test('no mutation of previous state',()=>{const s=createState(),copy=structuredClone(s);act(s,{type:'wait'});assert.deepEqual(s,copy)});
+test('undo restores full resources and evidence',()=>{const s=createState();assert.deepEqual(undo(act(s,{type:'inspect',source:'notice'}).state),s)});
+test('empty undo stable',()=>{const s=createState();assert.strictEqual(undo(s),s)});
+test('paper cannot go negative',()=>{let s=createState();for(let i=0;i<6;i++)s=act(s,{type:'reassure',node:0}).state;assert.equal(s.ink,0);assert.ok(act(s,{type:'reassure',node:0}).error)});
+test('end stops input',()=>{const s=finish(createState());assert.equal(s.tick,MAX_TICKS);assert.ok(act(s,{type:'listen',node:0}).error)});
+test('undo reopens a finished game',()=>assert.equal(undo(finish(createState())).ended,false));
+test('status thresholds explicit',()=>{assert.equal(label(35),'依据已明');assert.equal(label(-35),'相信传闻');assert.equal(label(0),'仍在观望')});
+test('neighbors are symmetric',()=>{for(const c of SCENARIOS){const s=createState(c.id);for(let i=0;i<8;i++)for(const n of neighbors(s,i))assert.ok(neighbors(s,n).includes(i))}});
+for(const c of SCENARIOS){
+ test(`${c.id}: exact winning strategy`,()=>{const s=finish(play(c.id,[...verify(c),...steps[c.id].map(node=>({type:'publish',node}))]));assert.ok(stats(s).win);assert.equal(stats(s).settled,8)});
+ test(`${c.id}: wait-only contrasting failure`,()=>{const s=finish(createState(c.id));assert.equal(stats(s).win,false);assert.equal(s.evidence.length,0);assert.ok(stats(s).worried>=6)});
+ test(`${c.id}: event applies at declared tick`,()=>{const s=finish(createState(c.id));assert.ok(s.log[c.event.tick-1].text.includes(c.event.text));assert.equal(s.log.filter(x=>x.text.includes(c.event.text)).length,1)});
+ test(`${c.id}: serialized replay restores exact state`,()=>{const s=finish(play(c.id,[...verify(c),...steps[c.id].map(node=>({type:'publish',node}))]));assert.deepEqual(restore(JSON.parse(JSON.stringify(s))),s)});
+}
+test('corrupt saves rejected',()=>{for(const v of [null,{},[],{scenario:'bridge',log:[{action:{type:'bad'}}]},{scenario:'bad',log:[]}])assert.equal(restore(v),null)});
+test('tampered state is rebuilt from validated actions',()=>{const s=createState();s.trust=999;s.ink=99;assert.deepEqual(restore(s),createState())});
+test('beliefs/trust bounded for all action traces',()=>{for(const c of SCENARIOS){let s=play(c.id,verify(c));for(let i=0;i<12;i++){s=act(s,{type:s.ink?'reassure':'listen',node:i%8}).state;assert.ok(s.beliefs.every(v=>v>=-100&&v<=100));assert.ok(s.trust>=0&&s.trust<=100)}}});
+test('different starting node changes reachable state',()=>{const s=play('bridge',verify(SCENARIOS[0]));assert.notDeepEqual(act(s,{type:'publish',node:0}).state.beliefs,act(s,{type:'publish',node:7}).state.beliefs)});
+for(const [id,path] of Object.entries({bridge:[0,0,4],lantern:[0,2,4],library:[7,7]}))test(`${id}: paper-saving alternative also wins`,()=>{const c=SCENARIOS.find(x=>x.id===id);const s=finish(play(id,[...verify(c),...path.map(node=>({type:'publish',node}))]));assert.ok(stats(s).win);assert.equal(s.ink,6-path.length)});

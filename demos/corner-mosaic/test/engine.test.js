@@ -1,0 +1,30 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {LEVELS,rotate,cloneBoard,initialState,change,undo,restore,analyze,inverseSolution} from '../src/engine.js';import {tileSVG,exportSVG} from '../src/art.js';
+const base={id:1,edges:[0,1,2,0]};
+test('clockwise rotation moves top to right',()=>assert.deepEqual(rotate(base).edges,[0,0,1,2]));
+test('counterclockwise rotation',()=>assert.deepEqual(rotate(base,-1).edges,[1,2,0,0]));
+test('four rotations are identity',()=>assert.deepEqual(rotate(base,4),base));
+test('rotation preserves original tile',()=>{rotate(base);assert.deepEqual(base.edges,[0,1,2,0]);});
+test('board cloning is deep',()=>{const b=cloneBoard([base]);b[0].edges[0]=2;assert.equal(base.edges[0],0);});
+for(const [i,l]of LEVELS.entries()){
+ test(`${l.id}: solution has zero conflicts and connected gate`,()=>{const a=analyze(l.solution,l);assert.equal(a.won,true);assert.equal(a.conflicts.length,0);assert.equal(a.total,2*l.n*(l.n+1));});
+ test(`${l.id}: scramble is not already complete`,()=>assert.equal(analyze(l.initial,l).won,false));
+ test(`${l.id}: exact action sequence solves`,()=>{let s=initialState(i);for(const a of inverseSolution(l))s=change(s,a);assert.deepEqual(s.board,l.solution);assert.ok(analyze(s.board,l).won);});
+ test(`${l.id}: all moves can be undone`,()=>{let s=initialState(i);for(const a of inverseSolution(l))s=change(s,a);while(s.history.length)s=undo(s);assert.deepEqual(s.board,l.initial);assert.equal(s.moves,0);});
+ test(`${l.id}: removing exit blue breaks connectivity`,()=>{const b=cloneBoard(l.solution);const g=l.gates[1];b[g.index].edges[g.side]=0;assert.equal(analyze(b,l).connected,false);assert.equal(analyze(b,l).won,false);});
+ test(`${l.id}: outer wrong color is conflict`,()=>{const b=cloneBoard(l.solution);b[0].edges[0]=2;assert.ok(analyze(b,l).conflicts.some(c=>c.i===0&&c.d===0));});
+}
+test('swap preserves multiset and counts one move',()=>{const s=initialState();const next=change(s,{type:'swap',a:0,b:8});assert.equal(next.board[0].id,s.board[8].id);assert.equal(next.moves,1);assert.equal(next.history.length,1);assert.deepEqual(next.board.map(t=>t.id).sort(),s.board.map(t=>t.id).sort());});
+test('swap twice restores board',()=>{let s=initialState();s=change(s,{type:'swap',a:0,b:8});s=change(s,{type:'swap',a:0,b:8});assert.deepEqual(s.board,LEVELS[0].initial);});
+test('invalid moves ignored',()=>{const s=initialState();for(const a of [{type:'rotate',index:999},{type:'swap',a:-1,b:1},{type:'swap',a:0,b:0},{type:'paint',index:0,side:0},{type:'rotate',index:1.5},{type:'unknown'}])assert.equal(change(s,a),s);});
+test('free paint cycles three colors and undo works',()=>{let s=initialState(0,true);const old=cloneBoard(s.board);for(let i=0;i<3;i++)s=change(s,{type:'paint',index:0,side:0});assert.deepEqual(s.board,old);s=undo(s);assert.notDeepEqual(s.board,old);});
+test('empty undo no op',()=>{const s=initialState();assert.equal(undo(s),s);});
+test('roundtrip saved state retains history',()=>{let s=change(initialState(1),{type:'rotate',index:0});assert.deepEqual(restore(JSON.stringify(s)),s);});
+test('malformed save rejected',()=>{for(const value of ['nope','null','{}','{"version":2}',JSON.stringify({...initialState(),board:[]}),JSON.stringify({...initialState(),moves:-2}),JSON.stringify({...initialState(),free:'yes'})])assert.equal(restore(value),null);});
+test('duplicate ids and invalid colors rejected',()=>{let s=initialState();s.board[1].id=s.board[0].id;assert.equal(restore(JSON.stringify(s)),null);s=initialState();s.board[0].edges[0]=9;assert.equal(restore(JSON.stringify(s)),null);});
+test('invalid history filtered without losing valid board',()=>{let s=initialState();s.history=[{board:[],moves:3}];assert.deepEqual(restore(JSON.stringify(s)).history,[]);});
+test('history bounded',()=>{let s=initialState();for(let i=0;i<220;i++)s=change(s,{type:'rotate',index:0});assert.equal(s.history.length,200);});
+test('blue path cannot jump mismatched boundary',()=>{const l=LEVELS[0],b=l.solution.map(t=>({...t,edges:[0,0,0,0]}));b[l.gates[0].index].edges[3]=1;b[l.gates[1].index].edges[1]=1;assert.equal(analyze(b,l).connected,false);assert.deepEqual(analyze(b,l).visited,[0]);});
+test('complete route alone insufficient for win',()=>{const l=LEVELS[0],b=cloneBoard(l.solution);b[2].edges[0]=2;const a=analyze(b,l);assert.ok(a.connected);assert.equal(a.won,false);});
+test('SVG tile contains four conflict markers and route marker',()=>{const s=tileSVG(base,[0,1,2,3],true);assert.equal((s.match(/#b32935/g)||[]).length,4);assert.ok(s.includes('#153d59'));});
+test('SVG export includes every tile and title without scripts',()=>{const s=exportSVG(LEVELS[0].initial,LEVELS[0]);assert.equal((s.match(/<g transform/g)||[]).length,9);assert.ok(s.includes('海港小径'));assert.ok(!s.includes('<script'));});

@@ -1,0 +1,20 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {COMMISSIONS,layout,slotForPage,createState,validateState,readOrder,assess,act,hint,solution} from '../engine.js';
+test('8-page nested folio imposition',()=>assert.deepEqual(layout(8),[[8,1,2,7],[6,3,4,5]]));
+test('12-page nested folio imposition',()=>assert.deepEqual(layout(12),[[12,1,2,11],[10,3,4,9],[8,5,6,7]]));
+test('16-page nested folio imposition',()=>assert.deepEqual(layout(16),[[16,1,2,15],[14,3,4,13],[12,5,6,11],[10,7,8,9]]));
+test('reject impossible page count',()=>{for(const n of [0,-4,6,NaN,3.5])assert.throws(()=>layout(n));});
+test('reject impossible page numbers',()=>{assert.throws(()=>slotForPage(8,0));assert.throws(()=>slotForPage(8,9));});
+for(const c of COMMISSIONS){test(c.id+' has each page exactly once and correct pair sums',()=>{const a=layout(c.pages);assert.deepEqual([...a.flat()].sort((a,b)=>a-b),Array.from({length:c.pages},(_,i)=>i+1));for(const s of a){assert.equal(s[0]+s[1],c.pages+1);assert.equal(s[2]+s[3],c.pages+1);}});test(c.id+' begins unsolved with valid state',()=>{const s=createState(c.id);assert.ok(validateState(s));assert.equal(assess(s).complete,false);});test(c.id+' physical reading map reverses imposition',()=>{const s=createState(c.id);s.cards=layout(c.pages).flat().map(page=>({page,rotation:0}));assert.deepEqual(readOrder(s).map(x=>x.page),Array.from({length:c.pages},(_,i)=>i+1));assert.ok(assess(s).complete);});for(let v=0;v<6;v++)test(`${c.id} variant ${v} solvable through legal swaps and rotations`,()=>{let s=createState(c.id,v);for(const a of solution(s))s=act(s,a);assert.ok(assess(s).complete);assert.ok(s.moves>0);});}
+test('swap changes reading order but preserves input',()=>{const s=createState(),before=JSON.stringify(s),next=act(s,{type:'swap',a:0,b:1});assert.equal(JSON.stringify(s),before);assert.equal(next.cards[0].page,s.cards[1].page);assert.equal(next.moves,1);assert.notDeepEqual(readOrder(next),readOrder(s));});
+test('same-slot swap is a no-op',()=>{const s=createState();assert.deepEqual(act(s,{type:'swap',a:0,b:0}),s);});
+test('rotation twice restores card orientation',()=>{const s=createState();const next=act(act(s,{type:'rotate',index:0}),{type:'rotate',index:0});assert.deepEqual(s.cards,next.cards);assert.equal(next.moves,2);});
+test('moving a whole sheet changes four-page group order',()=>{const s=createState();const next=act(s,{type:'sheet',from:0,to:1});assert.deepEqual(next.cards.slice(0,4),s.cards.slice(4));assert.deepEqual(next.cards.slice(4),s.cards.slice(0,4));assert.equal(next.moves,1);});
+test('moving same sheet is no-op',()=>{const s=createState();assert.deepEqual(act(s,{type:'sheet',from:0,to:0}),s);});
+test('invalid actions rejected',()=>{const s=createState();for(const a of [{type:'swap',a:-1,b:0},{type:'rotate',index:8},{type:'sheet',from:0,to:2},{type:'sheet',from:.5,to:1},{type:'oops'}])assert.throws(()=>act(s,a));});
+test('missing and duplicate saved cards rejected',()=>{assert.equal(validateState(null),false);const s=createState();s.cards[0]=s.cards[1];assert.equal(validateState(s),false);});
+test('corrupted saved orientation rejected',()=>{const s=createState();s.cards[0].rotation=90;assert.equal(validateState(s),false);});
+test('corrupted saved moves rejected',()=>{const s=createState();s.moves=-1;assert.equal(validateState(s),false);});
+test('hint identifies front right cover',()=>assert.deepEqual(hint(createState(),1),{expected:1,partner:8,sheet:1,side:'正面',position:'右'}));
+test('hint identifies inner back pages',()=>assert.deepEqual(hint(createState(),7),{expected:5,partner:4,sheet:2,side:'背面',position:'右'}));
+test('all positions carry accurate hints',()=>{const s=createState('garden');for(let i=0;i<16;i++)assert.equal(hint(s,i).expected,layout(16).flat()[i]);});
+test('correct numbering with inverted page not a win',()=>{const s=createState();s.cards=layout(8).flat().map(page=>({page,rotation:0}));const next=act(s,{type:'rotate',index:3});assert.equal(assess(next).correct,7);assert.equal(assess(next).inverted,1);assert.equal(assess(next).complete,false);});

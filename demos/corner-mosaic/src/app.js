@@ -1,0 +1,32 @@
+import {LEVELS,COLORS,initialState,change,undo,analyze,restore} from './engine.js';
+import {tileSVG,exportSVG} from './art.js';
+const $=s=>document.querySelector(s),KEY='corner-mosaic-v1';
+let state=initialState(),selected=null,feedback='把海蓝小路接起来，让海港通往灯塔。',hint='',storageOK=true;
+try{const saved=restore(localStorage.getItem(KEY));if(saved){state=saved;feedback='已接着上次的拼花继续。';}}catch{storageOK=false;}
+const level=()=>LEVELS[state.levelIndex];
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(state));storageOK=true;}catch{storageOK=false;}}
+function render(focusIndex=null){
+ const l=level(),a=analyze(state.board,l);$('#title').textContent=state.free?'自由铺砖 · 海边工作台':l.title;$('#subtitle').textContent=state.free?'可以改边色、旋转和交换。没有必须完成的委托，导出属于自己的拼花。':l.subtitle;
+ $('#mode-label').textContent=state.free?'没有标准答案':'今日委托';$('.board').style.setProperty('--n',l.n);
+ $('#board').innerHTML=state.board.map((t,i)=>{const errs=[];if($('#show-errors').checked)for(const c of a.conflicts){if(c.i===i)errs.push(c.d);if(c.j===i)errs.push((c.d+2)%4);}
+ return `<button class="tile${selected===i?' selected':''}" data-tile="${i}" aria-pressed="${selected===i}" aria-label="第${i+1}格，${t.id}号砖，上${COLORS[t.edges[0]]}、右${COLORS[t.edges[1]]}、下${COLORS[t.edges[2]]}、左${COLORS[t.edges[3]]}${errs.length?'，有未接合边':''}">${tileSVG(t,errs,$('#show-route').checked&&a.visited.includes(i))}<span class="tile-id">${String(t.id).padStart(2,'0')}</span></button>`;}).join('');
+ $('#gates').innerHTML=l.gates.map(g=>`<span class="gate ${g.side===3?'left':'right'}" style="top:${(Math.floor(g.index/l.n)+.5)*100/l.n}%">${g.name}</span>`).join('');
+ $('#matched').textContent=a.matched.length;$('#total').textContent=`/ ${a.total} 条边相合`;$('#moves').textContent=`${state.moves} 步 · ${state.hints} 次线索`;$('#progress').style.width=`${a.matched.length/a.total*100}%`;$('#route-state').textContent=a.connected?'● 海港 → 灯塔：已连通。再检查每一条边。':`○ 海港 → 灯塔：尚未连通，当前可达 ${a.visited.length} 块砖。`;
+ $('#selection').textContent=selected===null?'先选一块瓷砖':`第 ${selected+1} 格 · ${state.board[selected].id} 号砖`;$('#selection-help').textContent=selected===null?'点击一块选中，再点另一块交换位置。':'再点另一块交换；再点本块取消。也可以先旋转。';$('#left').disabled=$('#right').disabled=$('#hint').disabled=selected===null;$('#undo').disabled=!state.history.length;$('#paint-tools').hidden=!state.free;document.querySelectorAll('[data-paint]').forEach(b=>b.disabled=selected===null);
+ $('#hint-text').textContent=hint;$('#feedback').textContent=feedback;$('#save-status').textContent=storageOK?'进度自动保存在这个浏览器，不会上传。':'浏览器无法保存，当前仍可游玩；关闭页面后进度可能丢失。';$('#win').hidden=state.free||!a.won;$('#win-copy').textContent=`用了 ${state.moves} 步、${state.hints} 次线索。所有边严丝合缝，海港与灯塔已经连通。试试更少步数，或导出留念。`;$('#next').textContent=state.levelIndex===2?'去自由铺砖 →':'下一张委托 →';
+ document.querySelectorAll('[data-level]').forEach(b=>{const active=!state.free&&Number(b.dataset.level)===state.levelIndex;b.classList.toggle('active',active);b.setAttribute('aria-pressed',active);});$('#free').classList.toggle('active',state.free);$('#free').setAttribute('aria-pressed',state.free);
+ $('#reference').style.setProperty('--n',l.n);$('#reference').innerHTML=l.solution.map(t=>`<div class="reference-cell">${tileSVG(t)}<span>${String(t.id).padStart(2,'0')}</span></div>`).join('');
+ if(focusIndex!==null)document.querySelector(`[data-tile="${focusIndex}"]`)?.focus({preventScroll:true});
+}
+function act(action){const before=analyze(state.board,level());const next=change(state,action);if(next===state)return;state=next;hint='';const after=analyze(state.board,level()),diff=after.matched.length-before.matched.length;feedback=after.won&&!state.free?'完成了！海港通向灯塔，整幅拼花的边也都接好了。':`${action.type==='swap'?'交换了两块砖':action.type==='paint'?'换好了这一边的釉色':'旋转了一块砖'}。相合边${diff===0?'数量不变':diff>0?`增加 ${diff} 条`:`减少 ${-diff} 条`}，海蓝路${after.connected?'已经连通':'还在寻找出口'}。`;persist();render(selected);}
+$('#board').addEventListener('click',e=>{const b=e.target.closest('[data-tile]');if(!b)return;const i=Number(b.dataset.tile);hint='';if(selected===null){selected=i;feedback='已选中。点另一块交换，或使用左右转按钮。';render(i);}else if(selected===i){selected=null;feedback='已取消选择。';render(i);}else{const old=selected;selected=null;act({type:'swap',a:old,b:i});document.querySelector(`[data-tile="${i}"]`)?.focus({preventScroll:true});}});
+$('#right').onclick=()=>{if(selected!==null)act({type:'rotate',index:selected});};$('#left').onclick=()=>{if(selected!==null)act({type:'rotate',index:selected,turns:-1});};
+$('#undo').onclick=()=>{if(!state.history.length)return;state=undo(state);selected=null;hint='';feedback='已撤回一步，可以试另一条思路。';persist();render();};$('#deselect').onclick=()=>{selected=null;hint='';feedback='已取消选择，图案保持不变。';render();};
+$('#hint').onclick=()=>{if(selected===null)return;state.hints++;const tile=state.board[selected],i=tile.id-1,t=level().solution[i];hint=`原始图纸里，${tile.id} 号砖位于第 ${Math.floor(i/level().n)+1} 行、第 ${i%level().n+1} 列。朝向是：上${COLORS[t.edges[0]]}、右${COLORS[t.edges[1]]}、下${COLORS[t.edges[2]]}、左${COLORS[t.edges[3]]}。`;persist();render();};
+function switchLevel(i,free=false){state=initialState(i,free);selected=null;hint='';feedback=free?'自由铺砖开始：选砖后可以改变任一条边的颜色。':'新委托已铺开。先观察出入口，找出没有接合的边。';$('#blueprint').open=false;persist();render();}
+for(const b of document.querySelectorAll('[data-level]'))b.onclick=()=>switchLevel(Number(b.dataset.level));$('#free').onclick=()=>switchLevel(state.levelIndex,true);$('#next').onclick=()=>state.levelIndex<2?switchLevel(state.levelIndex+1):switchLevel(2,true);$('#restart').onclick=()=>switchLevel(state.levelIndex,state.free);
+for(const b of document.querySelectorAll('[data-paint]'))b.onclick=()=>{if(selected!==null)act({type:'paint',index:selected,side:Number(b.dataset.paint)});};
+$('#show-errors').onchange=()=>render();$('#show-route').onchange=()=>render();
+$('#export').onclick=()=>{const blob=new Blob([exportSVG(state.board,level())],{type:'image/svg+xml;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`corner-mosaic-${level().id}.svg`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);feedback='已导出当前拼花 SVG。它保留你的布局，不要求完成委托。';render();};
+document.addEventListener('keydown',e=>{if(e.target.matches('input,textarea,select'))return;if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){e.preventDefault();$('#undo').click();}else if(e.key==='Escape')$('#deselect').click();else if(!e.ctrlKey&&!e.metaKey&&selected!==null){if(e.key.toLowerCase()==='r'){e.preventDefault();$('#right').click();}if(e.key.toLowerCase()==='q'){e.preventDefault();$('#left').click();}}});
+render();

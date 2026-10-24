@@ -1,0 +1,2723 @@
+{
+  "rain": [
+    {
+      "action": {
+        "type": "swap",
+        "a": 0,
+        "b": 5
+      },
+      "description": "第1张正面左 ↔ 第2张正面右",
+      "beforeCards": [
+        {
+          "page": 7,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 180
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 1,
+        "b": 6
+      },
+      "description": "第1张正面右 ↔ 第2张背面左",
+      "beforeCards": [
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 180
+        },
+        {
+          "page": 1,
+          "rotation": 180
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "rotate",
+        "index": 1
+      },
+      "description": "第1张正面右 旋转180°",
+      "beforeCards": [
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 180
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 2,
+        "b": 7
+      },
+      "description": "第1张背面左 ↔ 第2张背面右",
+      "beforeCards": [
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 3,
+        "b": 5
+      },
+      "description": "第1张背面右 ↔ 第2张正面右",
+      "beforeCards": [
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "rotate",
+        "index": 3
+      },
+      "description": "第1张背面右 旋转180°",
+      "beforeCards": [
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 180
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 4,
+        "b": 6
+      },
+      "description": "第2张正面左 ↔ 第2张背面左",
+      "beforeCards": [
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 5,
+        "b": 7
+      },
+      "description": "第2张正面右 ↔ 第2张背面右",
+      "beforeCards": [
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 6,
+        "b": 7
+      },
+      "description": "第2张背面左 ↔ 第2张背面右",
+      "beforeCards": [
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "rotate",
+        "index": 6
+      },
+      "description": "第2张背面左 旋转180°",
+      "beforeCards": [
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        }
+      ]
+    }
+  ],
+  "night": [
+    {
+      "action": {
+        "type": "swap",
+        "a": 0,
+        "b": 9
+      },
+      "description": "第1张正面左 ↔ 第3张正面右",
+      "beforeCards": [
+        {
+          "page": 11,
+          "rotation": 180
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 9,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 180
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "rotate",
+        "index": 0
+      },
+      "description": "第1张正面左 旋转180°",
+      "beforeCards": [
+        {
+          "page": 12,
+          "rotation": 180
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 9,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 180
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 1,
+        "b": 10
+      },
+      "description": "第1张正面右 ↔ 第3张背面左",
+      "beforeCards": [
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 9,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 180
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 2,
+        "b": 11
+      },
+      "description": "第1张背面左 ↔ 第3张背面右",
+      "beforeCards": [
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 9,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 180
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 3,
+        "b": 9
+      },
+      "description": "第1张背面右 ↔ 第3张正面右",
+      "beforeCards": [
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 9,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 180
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "rotate",
+        "index": 3
+      },
+      "description": "第1张背面右 旋转180°",
+      "beforeCards": [
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 180
+        },
+        {
+          "page": 9,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 4,
+        "b": 10
+      },
+      "description": "第2张正面左 ↔ 第3张背面左",
+      "beforeCards": [
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 5,
+        "b": 11
+      },
+      "description": "第2张正面右 ↔ 第3张背面右",
+      "beforeCards": [
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 9,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 6,
+        "b": 9
+      },
+      "description": "第2张背面左 ↔ 第3张正面右",
+      "beforeCards": [
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 9,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "rotate",
+        "index": 6
+      },
+      "description": "第2张背面左 旋转180°",
+      "beforeCards": [
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 9,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 7,
+        "b": 10
+      },
+      "description": "第2张背面右 ↔ 第3张背面左",
+      "beforeCards": [
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 0
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 9,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 8,
+        "b": 11
+      },
+      "description": "第3张正面左 ↔ 第3张背面右",
+      "beforeCards": [
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "rotate",
+        "index": 9
+      },
+      "description": "第3张正面右 旋转180°",
+      "beforeCards": [
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        }
+      ]
+    }
+  ],
+  "garden": [
+    {
+      "action": {
+        "type": "swap",
+        "a": 0,
+        "b": 13
+      },
+      "description": "第1张正面左 ↔ 第4张正面右",
+      "beforeCards": [
+        {
+          "page": 15,
+          "rotation": 180
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 180
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 1,
+        "b": 14
+      },
+      "description": "第1张正面右 ↔ 第4张背面左",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 15,
+          "rotation": 180
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 180
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 2,
+        "b": 15
+      },
+      "description": "第1张背面左 ↔ 第4张背面右",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 15,
+          "rotation": 180
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 180
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "rotate",
+        "index": 2
+      },
+      "description": "第1张背面左 旋转180°",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 180
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 15,
+          "rotation": 180
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 3,
+        "b": 13
+      },
+      "description": "第1张背面右 ↔ 第4张正面右",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 15,
+          "rotation": 180
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "rotate",
+        "index": 3
+      },
+      "description": "第1张背面右 旋转180°",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 180
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 4,
+        "b": 14
+      },
+      "description": "第2张正面左 ↔ 第4张背面左",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 5,
+        "b": 15
+      },
+      "description": "第2张正面右 ↔ 第4张背面右",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 6,
+        "b": 13
+      },
+      "description": "第2张背面左 ↔ 第4张正面右",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "rotate",
+        "index": 6
+      },
+      "description": "第2张背面左 旋转180°",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 7,
+        "b": 14
+      },
+      "description": "第2张背面右 ↔ 第4张背面左",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 0
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 8,
+        "b": 15
+      },
+      "description": "第3张正面左 ↔ 第4张背面右",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 0
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 9,
+        "b": 13
+      },
+      "description": "第3张正面右 ↔ 第4张正面右",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 0
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "rotate",
+        "index": 9
+      },
+      "description": "第3张正面右 旋转180°",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 0
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 10,
+        "b": 14
+      },
+      "description": "第3张背面左 ↔ 第4张背面左",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 0
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 11,
+        "b": 15
+      },
+      "description": "第3张背面右 ↔ 第4张背面右",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 0
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 12,
+        "b": 13
+      },
+      "description": "第4张正面左 ↔ 第4张正面右",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 0
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "rotate",
+        "index": 12
+      },
+      "description": "第4张正面左 旋转180°",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 0
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 180
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 13,
+        "b": 14
+      },
+      "description": "第4张正面右 ↔ 第4张背面左",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 0
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "swap",
+        "a": 14,
+        "b": 15
+      },
+      "description": "第4张背面左 ↔ 第4张背面右",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 0
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        }
+      ]
+    },
+    {
+      "action": {
+        "type": "rotate",
+        "index": 15
+      },
+      "description": "第4张背面右 旋转180°",
+      "beforeCards": [
+        {
+          "page": 16,
+          "rotation": 0
+        },
+        {
+          "page": 1,
+          "rotation": 0
+        },
+        {
+          "page": 2,
+          "rotation": 0
+        },
+        {
+          "page": 15,
+          "rotation": 0
+        },
+        {
+          "page": 14,
+          "rotation": 0
+        },
+        {
+          "page": 3,
+          "rotation": 0
+        },
+        {
+          "page": 4,
+          "rotation": 0
+        },
+        {
+          "page": 13,
+          "rotation": 0
+        },
+        {
+          "page": 12,
+          "rotation": 0
+        },
+        {
+          "page": 5,
+          "rotation": 0
+        },
+        {
+          "page": 6,
+          "rotation": 0
+        },
+        {
+          "page": 11,
+          "rotation": 0
+        },
+        {
+          "page": 10,
+          "rotation": 0
+        },
+        {
+          "page": 7,
+          "rotation": 0
+        },
+        {
+          "page": 8,
+          "rotation": 0
+        },
+        {
+          "page": 9,
+          "rotation": 180
+        }
+      ]
+    }
+  ]
+}

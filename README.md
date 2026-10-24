@@ -22,6 +22,10 @@
 | 2026-10-23 | 蓝染实验室 | 画蜡、折叠与分层浸染，完成三种防染委托或创作独一块布样 | [README](demos/resist-dye/README.md) |
 | 2026-10-23 | 留白编辑部 | 从三篇原创散文中逐词删削、重新分行，在约束与自由写作中留下另一种叙事 | [README](demos/erasure-poetry/README.md) |
 | 2026-10-23 | 晴天洗衣计划 | 安排洗衣批次与晾晒时序，在天气、材质、截止时间与用电之间找到可行策略 | [README](demos/laundry-day/README.md) |
+| 2026-10-24 | 潮汐邮差 | 读懂六拍潮汐、安排投递与补给，在三张海岸地图里把信和自己带回邮局 | [README](demos/tidal-post/README.md) |
+| 2026-10-24 | 旧书装帧室 | 交换、翻转与重排纸张，让8、12、16页原创小书恢复可阅读的套帖顺序 | [README](demos/bookbinding-room/README.md) |
+| 2026-10-24 | 传闻小镇 | 在完全虚构的小镇核验来源，选择传播节点，以有限纸墨比较更正策略与不同结局 | [README](demos/rumor-town/README.md) |
+| 2026-10-24 | 街角拼花 | 旋转和交换瓷砖，同时满足边缘接色与海港到灯塔连通，也能自由改釉色创作 | [README](demos/corner-mosaic/README.md) |
 
 在线体验（公开）：
 - 把今天折成一首诗：https://hakuya-fold-a-day.golden-berry-3772.chatgpt.site
@@ -41,6 +45,11 @@
 - 蓝染实验室：https://hakuya-resist-dye.golden-berry-3772.chatgpt.site
 - 留白编辑部：https://hakuya-erasure-poetry.golden-berry-3772.chatgpt.site
 - 晴天洗衣计划：https://hakuya-laundry-day.golden-berry-3772.chatgpt.site
+
+- 潮汐邮差：https://hakuya-tidal-post.golden-berry-3772.chatgpt.site
+- 旧书装帧室：https://hakuya-bookbinding-room.golden-berry-3772.chatgpt.site
+- 传闻小镇：https://hakuya-rumor-town.golden-berry-3772.chatgpt.site
+- 街角拼花：https://hakuya-corner-mosaic.golden-berry-3772.chatgpt.site
 
 各项目独立部署；本作品无需登录即可访问。
 

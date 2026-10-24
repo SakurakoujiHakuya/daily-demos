@@ -306,5 +306,93 @@
     "category": "生活",
     "interaction": "安排洗涤与晾晒，让衣物赶在赴约前干透。",
     "accent": "#82A5A7"
+  },
+  {
+    "slug": "tidal-post",
+    "path": "demos/tidal-post",
+    "title": "潮汐邮差",
+    "description": "读懂六拍潮汐、安排投递与补给，在三张海岸地图里把信和自己带回邮局",
+    "date": "2026-10-24",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/tidal-post/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-tidal-post.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    },
+    "category": "策略",
+    "interaction": "看下一拍潮汐，安排投递与歇脚，把信和自己一起带回邮局。",
+    "accent": "#537E89"
+  },
+  {
+    "slug": "bookbinding-room",
+    "path": "demos/bookbinding-room",
+    "title": "旧书装帧室",
+    "description": "交换、翻转与重排纸张，让8、12、16页原创小书恢复可阅读的套帖顺序",
+    "date": "2026-10-24",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/bookbinding-room/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-bookbinding-room.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    },
+    "category": "文学",
+    "interaction": "交换散页、旋转倒字、调整纸层，试折出一本顺序正确的小书。",
+    "accent": "#9E7455"
+  },
+  {
+    "slug": "rumor-town",
+    "path": "demos/rumor-town",
+    "title": "传闻小镇",
+    "description": "在完全虚构的小镇核验来源，选择传播节点，以有限纸墨比较更正策略与不同结局",
+    "date": "2026-10-24",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/rumor-town/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-rumor-town.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    },
+    "category": "策略",
+    "interaction": "核验两份来源，再选择向谁投递；比较覆盖人数与剩余纸墨。",
+    "accent": "#BF7759"
+  },
+  {
+    "slug": "corner-mosaic",
+    "path": "demos/corner-mosaic",
+    "title": "街角拼花",
+    "description": "旋转和交换瓷砖，同时满足边缘接色与海港到灯塔连通，也能自由改釉色创作",
+    "date": "2026-10-24",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/corner-mosaic/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-corner-mosaic.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    },
+    "category": "创作",
+    "interaction": "旋转、交换瓷砖，接通海港与灯塔；也能自由改釉色。",
+    "accent": "#287A99"
   }
 ]
