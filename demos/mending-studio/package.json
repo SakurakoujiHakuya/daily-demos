@@ -1,0 +1,1 @@
+{"name":"mending-studio","version":"1.0.0","private":true,"type":"module","description":"A continuous-thread mending puzzle with three commissions and a free-design studio.","engines":{"node":">=18"},"scripts":{"start":"node scripts/serve.mjs","dev":"node scripts/serve.mjs","build":"node scripts/build.mjs","test":"node --test","check":"npm test && npm run build"},"license":"MIT"}

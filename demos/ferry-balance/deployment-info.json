@@ -1,0 +1,227 @@
+{
+  "url": "https://hakuya-ferry-balance.golden-berry-3772.chatgpt.site",
+  "access": "public",
+  "status": "succeeded",
+  "project_id": "appgprj_6addc68d27f081918c0304776f170fcc",
+  "version_id": "appgprj_6addc68d27f081918c0304776f170fcc~appgver_a9be56d41f8c8191b50028018a858417",
+  "version_number": 2,
+  "deployment_id": "appgdep_6addca37f70881918f507ebcbde789c4",
+  "source_sha": "60891c90c5b4309fdaae20a3920c9ff37d593836",
+  "verified_at": "2026-10-25T09:22:31Z",
+  "tests": {
+    "command": "npm test",
+    "passed": 30,
+    "failed": 0,
+    "build": "npm run build — passed",
+    "syntax": "node --check src/app.js src/engine.js scripts/build.js scripts/serve.js — passed individually"
+  },
+  "browser": {
+    "tool": "supported cua_repl cloud Chrome",
+    "tab": "5",
+    "verified_flows": [
+      "all three commissions completed via actual button actions in 5/7/7 crossings",
+      "same commission completed in 7 crossings with different efficiency ending",
+      "unsafe unattended bank, capacity overload, and same-side imbalance rejected without spending tickets",
+      "undo restores bank arrangement and one ticket",
+      "state-aware hint without automatic actions; budget dead-end hint",
+      "nine empty crossings exhaust budget; undo restores action",
+      "refresh resets current game while preserving best record",
+      "v2 direction-neutral empty-crossing text and ledger verified",
+      "no horizontal document overflow at observed desktop viewport"
+    ],
+    "viewport": {
+      "innerWidth": 1180,
+      "documentWidth": 1165
+    },
+    "mobile": "responsive CSS implemented; physical mobile viewport not tested because resize capability unavailable",
+    "app_errors_observed": 0,
+    "environment_note": "Browser extension metadata-reporting errors observed; not site-origin errors."
+  },
+  "solutions": [
+    {
+      "id": "market",
+      "title": "早市第一船",
+      "crossings": 5,
+      "loadPlans": [
+        {
+          "left": [
+            "grain"
+          ],
+          "right": [
+            "goose"
+          ]
+        },
+        {
+          "left": [
+            "grain"
+          ],
+          "right": []
+        },
+        {
+          "left": [
+            "fox"
+          ],
+          "right": []
+        },
+        {
+          "left": [
+            "goose"
+          ],
+          "right": []
+        },
+        {
+          "left": [
+            "grain"
+          ],
+          "right": [
+            "goose"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "family",
+      "title": "雏鹅回家",
+      "crossings": 7,
+      "loadPlans": [
+        {
+          "left": [
+            "gosling"
+          ],
+          "right": [
+            "grain"
+          ]
+        },
+        {
+          "left": [
+            "gosling"
+          ],
+          "right": []
+        },
+        {
+          "left": [
+            "gosling"
+          ],
+          "right": [
+            "fox"
+          ]
+        },
+        {
+          "left": [
+            "gosling"
+          ],
+          "right": []
+        },
+        {
+          "left": [
+            "gosling"
+          ],
+          "right": [
+            "keeper"
+          ]
+        },
+        {
+          "left": [
+            "gosling"
+          ],
+          "right": []
+        },
+        {
+          "left": [
+            "gosling"
+          ],
+          "right": [
+            "goose"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "garden",
+      "title": "迁往新花园",
+      "crossings": 7,
+      "loadPlans": [
+        {
+          "left": [
+            "pot"
+          ],
+          "right": [
+            "plant"
+          ]
+        },
+        {
+          "left": [
+            "plant"
+          ],
+          "right": []
+        },
+        {
+          "left": [
+            "child",
+            "dog"
+          ],
+          "right": [
+            "plant"
+          ]
+        },
+        {
+          "left": [
+            "plant"
+          ],
+          "right": []
+        },
+        {
+          "left": [
+            "bird"
+          ],
+          "right": [
+            "gardener"
+          ]
+        },
+        {
+          "left": [
+            "child"
+          ],
+          "right": []
+        },
+        {
+          "left": [
+            "plant",
+            "child"
+          ],
+          "right": [
+            "cat"
+          ]
+        }
+      ]
+    }
+  ],
+  "asset_sha256": {
+    "index.html": "0af71be7ecb1982bb320de3f37fb1cf4cf24996e97653af7844ecc952acd0b27",
+    "style.css": "651df9d43c761759e290fd3de28075ad993b3393db10fb711ded2de726db164c",
+    "src/engine.js": "f8df483cfcb1b488bdb7fd3f8033e98fff605ffd3eaf78e535a64fb39c19390b",
+    "src/app.js": "94585aeb3540e60853a5ebcabb9d73e1b23cc159d918032ee1ac7b02d3cabfef"
+  },
+  "catalog": {
+    "slug": "ferry-balance",
+    "path": "demos/ferry-balance",
+    "title": "渡口摆渡人",
+    "description": "安排左右舷配重、留岸看护与有限船票，在三份河畔委托中找出安全的往返方案",
+    "date": "2026-10-25",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/ferry-balance/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-ferry-balance.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    },
+    "category": "策略",
+    "interaction": "把伙伴装上两舷，配平重量、照看留岸的人与物，再解缆去对岸。",
+    "accent": "#346D71"
+  }
+}

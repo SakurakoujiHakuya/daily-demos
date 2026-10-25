@@ -394,5 +394,93 @@
     "category": "创作",
     "interaction": "旋转、交换瓷砖，接通海港与灯塔；也能自由改釉色。",
     "accent": "#287A99"
+  },
+  {
+    "slug": "mending-studio",
+    "path": "demos/mending-studio",
+    "title": "补丁缝纫铺",
+    "description": "用一根连续针迹加固裂口：有限线长与张力、三件旧衣委托、可编辑自由补丁和 SVG 留念。",
+    "date": "2026-10-25",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/mending-studio/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://mending-studio-20261025.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    },
+    "category": "生活",
+    "interaction": "沿网格连续行针，用有限线长和张力缝牢旧衣，也能设计自己的裂口。",
+    "accent": "#BC604D"
+  },
+  {
+    "slug": "ferry-balance",
+    "path": "demos/ferry-balance",
+    "title": "渡口摆渡人",
+    "description": "安排左右舷配重、留岸看护与有限船票，在三份河畔委托中找出安全的往返方案",
+    "date": "2026-10-25",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/ferry-balance/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-ferry-balance.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    },
+    "category": "策略",
+    "interaction": "把伙伴装上两舷，配平重量、照看留岸的人与物，再解缆去对岸。",
+    "accent": "#346D71"
+  },
+  {
+    "slug": "story-loom",
+    "path": "demos/story-loom",
+    "title": "双声道小说",
+    "description": "重排三篇原创短篇的双人桥段，修复时间与因果、选择留白和叙述前景，织出不同结尾。",
+    "date": "2026-10-25",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/story-loom/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-story-loom.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    },
+    "category": "文学",
+    "interaction": "交换双人桥段、修复行动与回应，再用留白和收尾改变阅读余音。",
+    "accent": "#A25439"
+  },
+  {
+    "slug": "market-bouquet",
+    "path": "demos/market-bouquet",
+    "title": "花束之间",
+    "description": "有限花材的花束创作游戏：三摊九份委托，剪裁、调配、配色与剪余再用；自由创作与 SVG 导出。",
+    "date": "2026-10-25",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/market-bouquet/README.md",
+    "license": "MIT",
+    "deployment": {
+      "url": "https://hakuya-market-bouquet.golden-berry-3772.chatgpt.site",
+      "access": "public"
+    },
+    "category": "创作",
+    "interaction": "分配有限花材，亲手剪短并摆出轮廓，让三份同时到来的心意各有去处。",
+    "accent": "#586D4D"
   }
 ]

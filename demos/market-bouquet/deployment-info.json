@@ -1,0 +1,50 @@
+{
+  "title": "花束之间",
+  "slug": "market-bouquet",
+  "date": "2026-10-25",
+  "url": "https://hakuya-market-bouquet.golden-berry-3772.chatgpt.site",
+  "browser_verified_url": "https://hakuya-market-bouquet.golden-berry-3772.chatgpt.site/",
+  "access": "public",
+  "project_id": "appgprj_6addc66dd45881919fa19d8fdbcae4a3",
+  "version_id": "appgprj_6addc66dd45881919fa19d8fdbcae4a3~appgver_0b8b5a4b2f608191a7b55737e1a46cc2",
+  "version_number": 1,
+  "deployment_id": "appgdep_6addc8e5f7dc8191a1acac37eb0a7fe8",
+  "source_commit_sha": "ce2b47070b71d6a60be29b17efd5b98dcb44bc00",
+  "status": "succeeded",
+  "published_at": "2026-10-25T09:16:31.712292+00:00",
+  "source_directory": "demos/market-bouquet",
+  "tests": {
+    "runner": "node --test",
+    "passed": 30,
+    "failed": 0,
+    "build": "passed",
+    "syntax_checks": [
+      "app.js",
+      "engine.js"
+    ]
+  },
+  "browser_qa": {
+    "tool": "supported cua_repl cloud browser, separate tab",
+    "viewport_width": 1165,
+    "horizontal_overflow": false,
+    "flows": [
+      "Five untrimmed warm stems score 85/100; ideal dome trimming changes them to 100/100 and creates 70 cm cutoffs.",
+      "Keyboard Home on the cream-stem slider trims its 50 cm length to 24 cm, visibly changes composition and score to 96/100; Undo restores 100/100 and cutoffs.",
+      "Recycling 15 cm changes cutoffs 70 to 55, reused length to 15, and coins 4 to 5; purchasing one sage stem returns coins to 4, purchases 1/4 and available stock 20.",
+      "SVG export produced an actual browser download; downloaded XML parsed successfully with viewBox 0 0 560 540 and 61 elements.",
+      "Delivery disables flower positions and locks the order, showing 1/3 delivered.",
+      "Second and third simultaneous morning commissions completed at 100/100 from remaining shared stock. Terminal result shows 3/3 delivered, average 100, reused 15 cm and 10 stems remaining (one restock was exercised).",
+      "Next-market button opens rainy scenario with an independent 24-stem stock.",
+      "Free composition shows infinity instead of scoring; a two-stem arrangement survives page reload.",
+      "Switching back to morning restores all 3 delivered commissions; undo is correctly unavailable after reload/scene switch.",
+      "Rules dialog opens and closes; initial and completed desktop layout visually inspected.",
+      "Coordinator independently completed rainy and dusk scenarios through actual UI at 09:22–09:24 UTC: all six remaining orders 100/100; each terminal result average 100, 9 stems remaining, no shopping. All three scenarios now browser-completed."
+    ],
+    "limits": [
+      "Responsive CSS implemented at 1150, 940 and 650 px; a narrow physical/mobile viewport was not separately browser-emulated.",
+      "Browser logs contained extension-origin metadata errors; no app-origin error was observed in the captured results."
+    ]
+  },
+  "scenario_solution_reference": "README.md — 可复现的解法; all nine commissions tested at 100/100 without shopping",
+  "credentials_included": false
+}

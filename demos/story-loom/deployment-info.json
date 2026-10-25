@@ -1,0 +1,43 @@
+{
+  "title": "双声道小说",
+  "slug": "story-loom",
+  "date": "2026-10-25",
+  "url": "https://hakuya-story-loom.golden-berry-3772.chatgpt.site",
+  "status": "succeeded",
+  "access": "public",
+  "project_id": "appgprj_6addc67527b481918adcbfa6aea55617",
+  "version_id": "appgprj_6addc67527b481918adcbfa6aea55617~appgver_d7b1eba05aa4819182e5ab801986e487",
+  "version_number": 1,
+  "deployment_id": "appgdep_6addc8e2d110819195cc5bb0429f4e23",
+  "source_commit_sha": "616ddf3b39a0f6e56d2ed121e9768c2409cfa666",
+  "published_at": "2026-10-25T09:16:22.953646+00:00",
+  "verified_at": "2026-10-25T09:30:32Z",
+  "tests": {
+    "passed": 35,
+    "failed": 0,
+    "command": "npm test",
+    "clean_install": "npm ci --ignore-scripts passed",
+    "build": "passed",
+    "runtime_source_parity": "four runtime files byte-identical to deployed source"
+  },
+  "browser_qa": {
+    "tool": "cua_repl cloud Chrome",
+    "flows": [
+      "All three initial chronology/causality conflicts repaired through UI",
+      "All nine endings reached through reordering and omission",
+      "Necessary card omission produces two concrete issues and hides final ending",
+      "Undo and redo restore coherent/incoherent states",
+      "Rewrite saved with literal HTML-looking text safely displayed as text",
+      "Narrator A foreground visibly reflected in reader",
+      "Refresh preserves text, omissions, ordering and foreground",
+      "Desktop screenshot inspected, document width 1165 <= viewport 1180"
+    ],
+    "mobile_tested": false,
+    "details": "QA.md"
+  },
+  "limitations": [
+    "No mobile device or Safari/Firefox QA",
+    "JSON import/export and text download are unit-tested but not browser-tested by coordinator",
+    "Structural validation does not analyze semantics of rewritten text"
+  ]
+}

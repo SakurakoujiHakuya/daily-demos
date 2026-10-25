@@ -1,0 +1,119 @@
+{
+  "slug": "mending-studio",
+  "title": "补丁缝纫铺",
+  "date": "2026-10-25",
+  "status": "succeeded",
+  "url": "https://mending-studio-20261025.golden-berry-3772.chatgpt.site",
+  "access": "public",
+  "project_id": "appgprj_6addc6726bd481919046a9a4df457e74",
+  "version_id": "appgprj_6addc6726bd481919046a9a4df457e74~appgver_6d21ab1dafd08191b4a3999cc9310891",
+  "version_number": 2,
+  "deployment_id": "appgdep_6addca51d478819191ddfc3a9e2062ea",
+  "source_commit_sha": "9912cd1468d8c625988b7b01fd49d54c70422391",
+  "source_directory": "demos/mending-studio",
+  "published_at": "2026-10-25T09:22:29.468755+00:00",
+  "creation_intent": "user_requested",
+  "tests": {
+    "command": "npm test",
+    "passed": 37,
+    "failed": 0,
+    "skipped": 0,
+    "fuzz_trials": 400,
+    "fuzz_attempts": 28000,
+    "build": "passed",
+    "frontend_source_parity": "four frontend files byte-identical to deployed checkout"
+  },
+  "browser_qa": {
+    "tool": "cua_repl cloud Chrome",
+    "tab_id": "8",
+    "tested_at": "2026-10-25T09:25:00Z",
+    "viewport_css": {
+      "width": 1165,
+      "height": 757
+    },
+    "horizontal_overflow": false,
+    "flows": [
+      "Wrong start rejected",
+      "Endpoint-only incomplete repair rejected",
+      "Cuff success 8 thread / 7 tension / 4 tears",
+      "Undo and re-submit",
+      "Pocket blocked edge rejected",
+      "Pocket short solution 8 / 6",
+      "Pocket alternate solution 12 / 9",
+      "Coat success 14 / 9",
+      "Free target edit cycle 0-2-3-0",
+      "Free keyboard sketch completion 2 / 1",
+      "Thread recolor preserves line",
+      "SVG downloaded and parsed as XML",
+      "Completion persists after reload",
+      "Final v2 keyboard focus retained after Enter",
+      "Final v2 tension and length limit failures preserve path",
+      "Final v2 non-editable cells hidden from accessibility tree"
+    ],
+    "app_origin_errors": 0,
+    "mobile_device_tested": false,
+    "details": "QA.md"
+  },
+  "solutions": [
+    {
+      "commission": "袖口的四道裂纹",
+      "path": [
+        "A2",
+        "A3",
+        "B3",
+        "B2",
+        "C2",
+        "C3",
+        "D3",
+        "D2",
+        "E2"
+      ],
+      "thread": 8,
+      "tension": 7
+    },
+    {
+      "commission": "口袋的两座小岛",
+      "path": [
+        "A3",
+        "B3",
+        "B2",
+        "C2",
+        "C3",
+        "C4",
+        "D4",
+        "D3",
+        "E3"
+      ],
+      "thread": 8,
+      "tension": 6
+    },
+    {
+      "commission": "风衣上的远行地图",
+      "path": [
+        "A1",
+        "B1",
+        "B2",
+        "C2",
+        "C1",
+        "D1",
+        "D2",
+        "D3",
+        "C3",
+        "B3",
+        "B4",
+        "C4",
+        "D4",
+        "E4",
+        "E5"
+      ],
+      "thread": 14,
+      "tension": 9
+    }
+  ],
+  "limitations": [
+    "Grid abstraction, not real sewing instruction or cloth physics",
+    "Completion records are browser-local; in-progress paths do not persist",
+    "Responsive CSS implemented; no real mobile/touch or Safari/Firefox QA",
+    "One fullPage screenshot call timed out; ordinary screenshot recovered"
+  ]
+}
