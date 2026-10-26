@@ -21,11 +21,11 @@
     "url": "https://image-light-20261026.golden-berry-3772.chatgpt.site",
     "access": "public",
     "project_id": "appgprj_6adf199022c0819186095c15a8706ea6",
-    "version_id": "appgprj_6adf199022c0819186095c15a8706ea6~appgver_40820603ac0c8191814979763ce8e340",
-    "version_number": 6,
-    "deployment_id": "appgdep_6adf202659608191a70da5c6c571c99b",
-    "source_commit_sha": "353b3a2a3cd9592cb6b3bc634ae75c7e190f4847",
-    "published_at": "2026-10-26T09:40:58.389713+00:00",
+    "version_id": "appgprj_6adf199022c0819186095c15a8706ea6~appgver_2758366622708191a70f8f68f346d836",
+    "version_number": 7,
+    "deployment_id": "appgdep_6adf236f09048191b7c0f93964b587a6",
+    "source_commit_sha": "c8b5ee8e439d846ef7f9abd1bfbb67c5486bc7e6",
+    "published_at": "2026-10-26T09:54:58.818712+00:00",
     "creation_intent": "user_requested",
     "tests": {
       "command": "npm test",
@@ -37,7 +37,7 @@
     "browser_qa": {
       "tool": "cua_repl cloud Chrome",
       "tab_id": "14",
-      "tested_at": "2026-10-26T09:41:40Z",
+      "tested_at": "2026-10-26T09:56:20Z",
       "viewport_css": {
         "width": 1180,
         "height": 757
@@ -60,10 +60,24 @@
         "Unsupported-browser format fallback not reproduced; MIME/extension mapping unit tested",
         "Invalid replacement file error retention covered by source regression assertion, not browser file test"
       ],
-      "final_tab_id": "30"
+      "final_tab_id": "36",
+      "final_version_flows": [
+        "Original multicolor city canvas PNG 1800×1200 294.4KB → default WebP1280×85327.1KB (91%)",
+        "640 WebP13.9KB (95%); PNG640×42783.8KB (72%)",
+        "JPEG320×21312.9KB (96%)",
+        "Real PNG and JPEG download events completed; PIL confirmed sizes/formats; PNG corner alpha0; JPEG opaque near-white corner",
+        "Width0 rejects and reset restores defaults",
+        "Blue original, violet output, cobalt action and coral comparison visible in screenshot; download bottom689 of757, no horizontal overflow"
+      ]
+    },
+    "color_contrast": {
+      "scope": "8 explicit basic text pairs only; not a full WCAG audit",
+      "minimum_ratio": 5.3,
+      "primary_action_ratio": 6.08,
+      "report": "contrast-check.json"
     }
   },
   "category": "生活",
   "interaction": "选择图片，调整宽度、格式与画质，比较体积后下载。",
-  "accent": "#227353"
+  "accent": "#3157D5"
 }

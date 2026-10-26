@@ -34,3 +34,42 @@
 .settings{color:#536658}
 footer{color:#647363}
 @media(max-width:650px){.workspace{gap:14px}.workspace::after{display:none}.actions{background:#f5f5f3}.panel-head label{font-size:14px}.result-panel .panel-head label{font-size:15px}}
+/* Editorial palette: cobalt rules, violet result, vermilion export. */
+:root{background:#ffffff;color:#18212f}
+.mark{background:#18212f;color:#ffffff}
+.presets{background:#edf1fa}
+.presets button{color:#43516a}
+.presets button[aria-pressed=true]{background:#1746b7;color:#ffffff;box-shadow:0 2px 0 #102f7b,0 2px 5px #1746b71a}
+.hint{color:#526074}
+.workspace::after{background:#ffffff;color:#43516a}
+.panel{background:#eef0f4;border-color:#c7cdd8}
+.panel-head{border-bottom-color:#d3d9e3}
+.panel-head label{color:#283449}
+.panel-head label::before{color:#566177}
+.panel textarea{background:#f3f5f8;color:#34415a}
+.panel textarea::placeholder{color:#626b7b}
+.result-panel{background:#ffffff;border-color:#b4a7d1;box-shadow:0 6px 20px #38255e0b}
+.result-panel::before{background:#6941c6}
+.result-panel .panel-head{background:#f5f1ff;border-bottom-color:#ded5f1}
+.result-panel .panel-head label{color:#392263}
+.result-panel .panel-head label::before{color:#6941c6}
+#result{background:#ffffff;color:#18212f}
+.panel-foot{color:#526074;border-top-color:#d3d9e3}
+.result-panel .panel-foot{background:#faf8ff}
+#delta{color:#5936a3}
+.badge{background:#e9dfff;color:#50318e}
+.primary{background:#bb361b;color:#ffffff;box-shadow:0 3px 0 #842511}
+.primary:hover:not(:disabled){background:#9f2b14}
+.quiet{color:#43516a}
+.quiet:hover:not(:disabled){background:#e7edf8}
+.secondary{background:#ffffff;border-color:#9ba7b9;color:#34415a}
+.secondary:hover:not(:disabled){background:#edf1fa}
+#status{color:#1746b7}
+.settings{color:#43516a;border-top-color:#d3d9e3}
+.fine{color:#526074}
+#diff{background:#f3f5f8;color:#34415a}
+input{accent-color:#1746b7}
+footer{color:#626b7b}
+textarea:focus{box-shadow:inset 0 0 0 2px #1746b7}
+button:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #1746b7;outline-offset:3px}
+@media(max-width:650px){.actions{background:#ffffff;border-top-color:#d3d9e3;box-shadow:0 -5px 20px #18212f0b}}

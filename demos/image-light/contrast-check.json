@@ -1,0 +1,53 @@
+{
+  "scope": "Explicit basic text pairs only, not a global WCAG audit",
+  "pairs": [
+    {
+      "name": "body",
+      "foreground": "#17233D",
+      "background": "#F5F7FC",
+      "ratio": 14.58
+    },
+    {
+      "name": "control",
+      "foreground": "#263650",
+      "background": "#FFFFFF",
+      "ratio": 12.17
+    },
+    {
+      "name": "secondary",
+      "foreground": "#5E6C85",
+      "background": "#FFFFFF",
+      "ratio": 5.3
+    },
+    {
+      "name": "action",
+      "foreground": "#FFFFFF",
+      "background": "#3157D5",
+      "ratio": 6.08
+    },
+    {
+      "name": "output",
+      "foreground": "#412B74",
+      "background": "#F0EBFC",
+      "ratio": 9.87
+    },
+    {
+      "name": "comparison",
+      "foreground": "#8F2B16",
+      "background": "#FFE2D8",
+      "ratio": 6.78
+    },
+    {
+      "name": "input identity",
+      "foreground": "#254E94",
+      "background": "#FFFFFF",
+      "ratio": 8.09
+    },
+    {
+      "name": "output identity",
+      "foreground": "#6542A5",
+      "background": "#FFFFFF",
+      "ratio": 7.3
+    }
+  ]
+}

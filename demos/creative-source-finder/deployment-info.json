@@ -6,16 +6,16 @@
   "url": "https://creative-source-finder-20261026.golden-berry-3772.chatgpt.site",
   "access": "public",
   "project_id": "appgprj_6adf19ed63688191a06080c432fdd88c",
-  "version_id": "appgprj_6adf19ed63688191a06080c432fdd88c~appgver_c09e0a2fa38481919dc3909b5b9f0d2c",
-  "version_number": 5,
-  "deployment_id": "appgdep_6adf207c51188191a9c386523cd41dc6",
-  "source_commit_sha": "fae6ad76a5512a6a0de0c42c0276c6b09b905743",
+  "version_id": "appgprj_6adf19ed63688191a06080c432fdd88c~appgver_def21998ba948191b5c07b98b97f8ee5",
+  "version_number": 7,
+  "deployment_id": "appgdep_6adf23a8246c81918cb20488168e92e4",
+  "source_commit_sha": "37854648c99cc0a603289b1fe96f8181cb4302b2",
   "source_directory": "demos/creative-source-finder",
-  "published_at": "2026-10-26T09:42:26.902025+00:00",
+  "published_at": "2026-10-26T09:55:55.725675+00:00",
   "creation_intent": "user_requested",
   "tests": {
     "command": "npm test",
-    "passed": 27,
+    "passed": 36,
     "failed": 0,
     "build": "passed",
     "dependencies": 0
@@ -61,6 +61,23 @@
         "height": 757,
         "scrollWidth": 1165
       }
+    },
+    "color_revision": {
+      "tested_at": "2026-10-26T09:56:00Z",
+      "tab_id": "37",
+      "result": "v7 screenshot and search/category/comparison smoke passed; semantic category hues, uniform ink selected states",
+      "partial_contrast_ratios": {
+        "font_badge": 5.7,
+        "icon_badge": 5.71,
+        "photo_badge": 4.8,
+        "illustration_badge": 5.3,
+        "body": 16.27,
+        "secondary": 6.14,
+        "selected": 16.27,
+        "action_link": 7.1,
+        "primary_button": 6.16
+      },
+      "contrast_scope": "Selected foreground/background pairs only, not full WCAG audit"
     }
   }
 }

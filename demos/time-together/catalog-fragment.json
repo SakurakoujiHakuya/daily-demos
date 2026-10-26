@@ -21,22 +21,22 @@
     "url": "https://time-together-20261026.golden-berry-3772.chatgpt.site",
     "access": "public",
     "project_id": "appgprj_6adf19d0f0088191bd97995f23c7131d",
-    "version_id": "appgprj_6adf19d0f0088191bd97995f23c7131d~appgver_84f27c1a762081918dda6c0c4d49597f",
-    "version_number": 7,
-    "deployment_id": "appgdep_6adf20f783d48191b597b620c7afe466",
-    "source_commit_sha": "5c5b2bef3ab66abce4794816a8d59ea5dad32462",
-    "published_at": "2026-10-26T09:44:26.836323+00:00",
+    "version_id": "appgprj_6adf19d0f0088191bd97995f23c7131d~appgver_704d2d9e35188191be55710f5037a578",
+    "version_number": 8,
+    "deployment_id": "appgdep_6adf24350dc88191bc43990cade488f0",
+    "source_commit_sha": "42416c03a50731b71d504aba05837d15b0fe2ee7",
+    "published_at": "2026-10-26T09:58:16.476889+00:00",
     "creation_intent": "user_requested",
     "tests": {
       "command": "npm test",
-      "passed": 27,
+      "passed": 30,
       "failed": 0,
       "build": "passed"
     },
     "browser_qa": {
       "tool": "cua_repl cloud Chrome",
       "tab_id": "16",
-      "tested_at": "2026-10-26T09:25:00Z",
+      "tested_at": "2026-10-26T09:58:50Z",
       "desktop": true,
       "viewport_css": {
         "width": 1180,
@@ -56,7 +56,9 @@
         "Actual ICS download event completed",
         "Integrator independently read downloaded ICS bytes: correct UTC event, no attendees, CRLF, <=75 UTF-8 octets per line",
         "v5 copy audit: removed implementation reassurance; actual download shows concise feedback 日历已生成",
-        "v7 desktop split workspace screenshot: editable city bands left; dark selected result and gold download right; both cities and primary action first screen; selection/no-overlap rechecked"
+        "v7 desktop split workspace screenshot: editable city bands left; dark selected result and gold download right; both cities and primary action first screen; selection/no-overlap rechecked",
+        "v8 local clock day/night colors, shared availability color and stable labeled city identity screenshot verified",
+        "v8 choose19:00 ->19–20; no-overlap ->0 common colored slots and download disabled"
       ],
       "limits": [
         "Downloaded ICS bytes validated by pure tests, browser download completion observed; no calendar app import test",
@@ -68,5 +70,5 @@
   },
   "category": "生活",
   "interaction": "设置日期和各地可用时间，点选共同空闲并导出日历。",
-  "accent": "#176B68"
+  "accent": "#345BCD"
 }

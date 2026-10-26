@@ -27,4 +27,4 @@ npm run dev
 静态文件通过 Sites 官方 source/package/save/deploy 工作流发布。`.openai/hosting.json` 声明 Site 与 dist。实际地址和部署状态见 deployment-info.json。源代码同步至 GitHub `demos/image-light`。
 
 ## 许可与素材
-MIT。示例画面由本项目 Canvas 原创绘制，无外部图片、字体或 API 依赖。设计借鉴 Squoosh 的输入→比较→导出工作流，未复制其代码或素材。
+MIT。多色城市示例由本项目 Canvas 原创绘制，含渐变、细线、文字、硬边和透明边缘，无外部图片、字体或 API 依赖。设计借鉴 Squoosh 的输入→比较→导出工作流，未复制其代码或素材。

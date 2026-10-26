@@ -6,11 +6,11 @@
   "url": "https://text-tidy-20261026.golden-berry-3772.chatgpt.site",
   "access": "public",
   "project_id": "appgprj_6adf19a79fd881919ad83f73e0351200",
-  "version_id": "appgprj_6adf19a79fd881919ad83f73e0351200~appgver_0ebdb4d71fd08191832ff223146051c6",
-  "version_number": 5,
-  "deployment_id": "appgdep_6adf2080f0008191867c9696410b7bd3",
-  "source_commit_sha": "22f16890132f3a7bd7806e2b717340e68cb65ef0",
-  "published_at": "2026-10-26T09:42:31.972522+00:00",
+  "version_id": "appgprj_6adf19a79fd881919ad83f73e0351200~appgver_8ffb248e687c8191876d227c4ba1e0e9",
+  "version_number": 6,
+  "deployment_id": "appgdep_6adf232cef98819187e6b65b5f18b60c",
+  "source_commit_sha": "79309949c03a6326ed3d008b51c0250233fb434e",
+  "published_at": "2026-10-26T09:53:52.729014+00:00",
   "creation_intent": "user_requested",
   "tests": {
     "command": "npm test",
@@ -65,6 +65,38 @@
         "Accent reserved selected tab and primary copy action"
       ],
       "sample_output_unchanged": true
+    },
+    "palette_v6": {
+      "tested_at": "2026-10-26T09:54:22Z",
+      "tab_id": "35",
+      "viewport_css": [
+        1180,
+        757
+      ],
+      "copy_button_bottom": 632.16,
+      "horizontal_overflow": false,
+      "roles": {
+        "page": "#FFFFFF",
+        "ink": "#18212F",
+        "selected_rule": "#1746B7",
+        "result_cue": "#6941C6",
+        "copy_action": "#BB361B"
+      },
+      "contrast_ratios": {
+        "body": 16.19,
+        "input": 9.38,
+        "placeholder": 4.92,
+        "selected_rule": 8.09,
+        "copy_action": 5.74,
+        "result_label": 11.95,
+        "statistics": 5.6
+      },
+      "scope": "15 specified text/background pairs measured; not a complete WCAG audit; disabled controls excluded",
+      "flows": [
+        "Sample actual result screenshot 38 chars",
+        "Copy success feedback",
+        "TXT download event completed"
+      ]
     }
   }
 }

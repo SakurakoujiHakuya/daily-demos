@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+const luminance=hex=>{const a=hex.slice(1).match(/../g).map(v=>parseInt(v,16)/255).map(v=>v<=0.04045?v/12.92:((v+0.055)/1.055)**2.4);return .2126*a[0]+.7152*a[1]+.0722*a[2]};
+const pairs=[['font badge','#7042B8','#F1EBFA'],['icon badge','#2555C9','#EAF0FF'],['photo badge','#B64235','#FDECE8'],['illustration badge','#076E75','#E4F4F3'],['body','#172033','#FFFFFF'],['secondary','#596273','#FFFFFF'],['selected label','#FFFFFF','#172033'],['action link','#244EB8','#FAFBFE'],['primary button','#FFFFFF','#2457D6']];
+for(const [name,fg,bg] of pairs)test(`selected contrast: ${name}`,()=>{const a=luminance(fg),b=luminance(bg);const ratio=(Math.max(a,b)+.05)/(Math.min(a,b)+.05);assert.ok(ratio>=4.5,`${name}: ${ratio}`);console.log(`${name}: ${ratio.toFixed(2)}:1`)});

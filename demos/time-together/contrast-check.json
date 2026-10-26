@@ -1,0 +1,50 @@
+[
+  {
+    "role": "正文",
+    "foreground": "#18213D",
+    "background": "#FFFFFF",
+    "ratio": 15.86
+  },
+  {
+    "role": "标签",
+    "foreground": "#374763",
+    "background": "#F3F6FD",
+    "ratio": 8.65
+  },
+  {
+    "role": "次级文字",
+    "foreground": "#52627C",
+    "background": "#FFFFFF",
+    "ratio": 6.18
+  },
+  {
+    "role": "结果元信息",
+    "foreground": "#D4DDF3",
+    "background": "#18213D",
+    "ratio": 11.66
+  },
+  {
+    "role": "下载按钮",
+    "foreground": "#FFFFFF",
+    "background": "#B84118",
+    "ratio": 5.52
+  },
+  {
+    "role": "选中时刻",
+    "foreground": "#542500",
+    "background": "#FFB36C",
+    "ratio": 7.26
+  },
+  {
+    "role": "图例",
+    "foreground": "#435570",
+    "background": "#FFFFFF",
+    "ratio": 7.58
+  },
+  {
+    "role": "错误",
+    "foreground": "#8E3514",
+    "background": "#FFF0E7",
+    "ratio": 7.07
+  }
+]
