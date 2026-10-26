@@ -1,0 +1,49 @@
+{
+  "slug": "image-light",
+  "title": "图片轻装",
+  "date": "2026-10-26",
+  "status": "succeeded",
+  "url": "https://image-light-20261026.golden-berry-3772.chatgpt.site",
+  "access": "public",
+  "project_id": "appgprj_6adf199022c0819186095c15a8706ea6",
+  "version_id": "appgprj_6adf199022c0819186095c15a8706ea6~appgver_3b4c29d142d08191933d4834dbc2b1e3",
+  "version_number": 5,
+  "deployment_id": "appgdep_6adf1f56fcd8819193ad4be45fda4e18",
+  "source_commit_sha": "0f337aa448b8e0bd047455ed0b7ca136ef95e46f",
+  "published_at": "2026-10-26T09:37:30.385285+00:00",
+  "creation_intent": "user_requested",
+  "tests": {
+    "command": "npm test",
+    "passed": 9,
+    "failed": 0,
+    "build": "passed",
+    "note": "8 pure helper/property tests and 1 static source regression assertion"
+  },
+  "browser_qa": {
+    "tool": "cua_repl cloud Chrome",
+    "tab_id": "14",
+    "tested_at": "2026-10-26T09:38:10Z",
+    "viewport_css": {
+      "width": 1180,
+      "height": 757
+    },
+    "horizontal_overflow": false,
+    "flows": [
+      "Original canvas sample → WebP 1280×853 15.0KB",
+      "Resize640 → WebP5.7KB with99.6% reduction",
+      "PNG640×427169.8KB and quality slider hidden",
+      "JPEG320×2134.5KB",
+      "Download event complete and actual JPEG dimensions verified via PIL",
+      "Width0 error disables download; reset restores output",
+      "File chooser of downloaded original sample JPEG completed successfully → WebP2.4KB",
+      "v4 removes all no-login/local-processing badges, duplicate subtitle/footer and redundant success prose; sample workflow rechecked",
+      "v5 empty state shows one choose action and one sample action; toolbar appears only after processing; title and metadata stripped implementation wording"
+    ],
+    "limits": [
+      "Narrow CSS layout implemented but real narrow/mobile viewport not tested",
+      "Unsupported-browser format fallback not reproduced; MIME/extension mapping unit tested",
+      "Invalid replacement file error retention covered by source regression assertion, not browser file test"
+    ],
+    "final_tab_id": "26"
+  }
+}
