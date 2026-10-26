@@ -1,0 +1,66 @@
+{
+  "slug": "creative-source-finder",
+  "title": "创作素材导航",
+  "date": "2026-10-26",
+  "status": "succeeded",
+  "url": "https://creative-source-finder-20261026.golden-berry-3772.chatgpt.site",
+  "access": "public",
+  "project_id": "appgprj_6adf19ed63688191a06080c432fdd88c",
+  "version_id": "appgprj_6adf19ed63688191a06080c432fdd88c~appgver_c09e0a2fa38481919dc3909b5b9f0d2c",
+  "version_number": 5,
+  "deployment_id": "appgdep_6adf207c51188191a9c386523cd41dc6",
+  "source_commit_sha": "fae6ad76a5512a6a0de0c42c0276c6b09b905743",
+  "source_directory": "demos/creative-source-finder",
+  "published_at": "2026-10-26T09:42:26.902025+00:00",
+  "creation_intent": "user_requested",
+  "tests": {
+    "command": "npm test",
+    "passed": 27,
+    "failed": 0,
+    "build": "passed",
+    "dependencies": 0
+  },
+  "browser_qa": {
+    "tool": "cua_repl cloud Chrome",
+    "tab_id": "19",
+    "tested_at": "2026-10-26T09:30:00Z",
+    "viewport_css": {
+      "width": 1180,
+      "height": 757
+    },
+    "horizontal_overflow": false,
+    "flows": [
+      "Chinese keyword 12→2 sources",
+      "category-specific format choices",
+      "combined category/format empty state and clear-preserving-query",
+      "two-source comparison with licensing/cost differences",
+      "three-item maximum rejects fourth without losing selection",
+      "favorites survive reload",
+      "query and comparison survive reload",
+      "actual Markdown download read as 497 UTF-8 bytes",
+      "dialog favorite focus repair verified",
+      "share dialog displays exact URL and browser copy-success callback"
+    ],
+    "limits": [
+      "Mobile viewport not browser-tested; responsive CSS reviewed only",
+      "External clipboard paste not verified",
+      "Third-party download/login workflows not exhaustively tested",
+      "Browser extension error logs observed; no app-source error observed"
+    ],
+    "copy_revision": {
+      "tested_at": "2026-10-26T09:36:00Z",
+      "tab_id": "23",
+      "result": "v4: removed filler footer and local-storage hint; search and saved dialog rechecked"
+    },
+    "visual_revision": {
+      "tested_at": "2026-10-26T09:43:00Z",
+      "tab_id": "28",
+      "result": "v5 screenshot: dominant dark search panel; neutral result cards; active category/compare clear; main actions remain first screen",
+      "viewport": {
+        "width": 1180,
+        "height": 757,
+        "scrollWidth": 1165
+      }
+    }
+  }
+}

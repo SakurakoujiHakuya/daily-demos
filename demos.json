@@ -551,5 +551,249 @@
     "category": "生活",
     "interaction": "选择图片，调整宽度、格式与画质，比较体积后下载。",
     "accent": "#227353"
+  },
+  {
+    "slug": "text-tidy",
+    "path": "demos/text-tidy",
+    "title": "文字整理台",
+    "description": "保留原文的文本清理台：整理空白、合并 PDF 断行、统一列表，预览后复制或下载。",
+    "date": "2026-10-26",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/text-tidy/README.md",
+    "license": "MIT",
+    "deployment": {
+      "slug": "text-tidy",
+      "title": "文字整理台",
+      "date": "2026-10-26",
+      "status": "succeeded",
+      "url": "https://text-tidy-20261026.golden-berry-3772.chatgpt.site",
+      "access": "public",
+      "project_id": "appgprj_6adf19a79fd881919ad83f73e0351200",
+      "version_id": "appgprj_6adf19a79fd881919ad83f73e0351200~appgver_0ebdb4d71fd08191832ff223146051c6",
+      "version_number": 5,
+      "deployment_id": "appgdep_6adf2080f0008191867c9696410b7bd3",
+      "source_commit_sha": "22f16890132f3a7bd7806e2b717340e68cb65ef0",
+      "published_at": "2026-10-26T09:42:31.972522+00:00",
+      "creation_intent": "user_requested",
+      "tests": {
+        "command": "npm test",
+        "passed": 19,
+        "failed": 0,
+        "build": "passed",
+        "option_combinations": 32
+      },
+      "browser_qa": {
+        "tool": "cua_repl cloud Chrome",
+        "tab_id": "15",
+        "tested_at": "2026-10-26T09:22:58Z",
+        "viewport_css": {
+          "width": 1180,
+          "height": 757
+        },
+        "horizontal_overflow": false,
+        "copy_button_bottom": 632,
+        "flows": [
+          "Three presets: whitespace 56→38 chars; PDF 9→7 lines; bullets normalize while numbered lines preserved",
+          "Custom input and optional inner-space collapse",
+          "Apply output then undo restores original",
+          "Clear and undo restores exact original",
+          "v3 repeated input undo restores first input",
+          "Copy click successful UI feedback; OS clipboard contents not independently verified",
+          "TXT download event completed and browser download path returned",
+          "100001-character input retained, processing disabled with clear error",
+          "Integrator independently read downloaded TXT bytes; exact UTF-8 match to visible sample result"
+        ],
+        "limits": [
+          "Narrow/mobile layout implemented and CSS reviewed, not real-device tested; cloud browser viewport-resize API unavailable",
+          "PDF line joining heuristic, not semantic document parsing"
+        ],
+        "copy_audit_v4": {
+          "tested_at": "2026-10-26T09:35:50Z",
+          "tab_id": "21",
+          "result": "Removed privacy/local-processing reassurance, redundant result placeholder; sample output unchanged"
+        },
+        "hierarchy_v5": {
+          "tested_at": "2026-10-26T09:42:43Z",
+          "tab_id": "27",
+          "viewport_css": [
+            1180,
+            757
+          ],
+          "copy_button_bottom": 632.16,
+          "horizontal_overflow": false,
+          "changes": [
+            "Neutral input canvas versus white emphasized result",
+            "01→02 task direction",
+            "Stronger labels and statistics",
+            "Accent reserved selected tab and primary copy action"
+          ],
+          "sample_output_unchanged": true
+        }
+      }
+    },
+    "category": "创作",
+    "interaction": "粘贴文字，选择整理方式，对照结果后复制；可细调、撤销和下载。",
+    "accent": "#245D4B"
+  },
+  {
+    "slug": "creative-source-finder",
+    "path": "demos/creative-source-finder",
+    "title": "创作素材导航",
+    "description": "按用途筛选12个字体、图标、照片与插画来源，对比许可与费用，收藏并导出素材清单。",
+    "date": "2026-10-26",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "readme": "demos/creative-source-finder/README.md",
+    "license": "MIT",
+    "deployment": {
+      "slug": "creative-source-finder",
+      "title": "创作素材导航",
+      "date": "2026-10-26",
+      "status": "succeeded",
+      "url": "https://creative-source-finder-20261026.golden-berry-3772.chatgpt.site",
+      "access": "public",
+      "project_id": "appgprj_6adf19ed63688191a06080c432fdd88c",
+      "version_id": "appgprj_6adf19ed63688191a06080c432fdd88c~appgver_c09e0a2fa38481919dc3909b5b9f0d2c",
+      "version_number": 5,
+      "deployment_id": "appgdep_6adf207c51188191a9c386523cd41dc6",
+      "source_commit_sha": "fae6ad76a5512a6a0de0c42c0276c6b09b905743",
+      "source_directory": "demos/creative-source-finder",
+      "published_at": "2026-10-26T09:42:26.902025+00:00",
+      "creation_intent": "user_requested",
+      "tests": {
+        "command": "npm test",
+        "passed": 27,
+        "failed": 0,
+        "build": "passed",
+        "dependencies": 0
+      },
+      "browser_qa": {
+        "tool": "cua_repl cloud Chrome",
+        "tab_id": "19",
+        "tested_at": "2026-10-26T09:30:00Z",
+        "viewport_css": {
+          "width": 1180,
+          "height": 757
+        },
+        "horizontal_overflow": false,
+        "flows": [
+          "Chinese keyword 12→2 sources",
+          "category-specific format choices",
+          "combined category/format empty state and clear-preserving-query",
+          "two-source comparison with licensing/cost differences",
+          "three-item maximum rejects fourth without losing selection",
+          "favorites survive reload",
+          "query and comparison survive reload",
+          "actual Markdown download read as 497 UTF-8 bytes",
+          "dialog favorite focus repair verified",
+          "share dialog displays exact URL and browser copy-success callback"
+        ],
+        "limits": [
+          "Mobile viewport not browser-tested; responsive CSS reviewed only",
+          "External clipboard paste not verified",
+          "Third-party download/login workflows not exhaustively tested",
+          "Browser extension error logs observed; no app-source error observed"
+        ],
+        "copy_revision": {
+          "tested_at": "2026-10-26T09:36:00Z",
+          "tab_id": "23",
+          "result": "v4: removed filler footer and local-storage hint; search and saved dialog rechecked"
+        },
+        "visual_revision": {
+          "tested_at": "2026-10-26T09:43:00Z",
+          "tab_id": "28",
+          "result": "v5 screenshot: dominant dark search panel; neutral result cards; active category/compare clear; main actions remain first screen",
+          "viewport": {
+            "width": 1180,
+            "height": 757,
+            "scrollWidth": 1165
+          }
+        }
+      }
+    },
+    "category": "创作",
+    "interaction": "搜索用途，筛选格式与许可；最多三项对比，收藏后导出来源清单。",
+    "accent": "#285B43"
+  },
+  {
+    "slug": "time-together",
+    "path": "demos/time-together",
+    "title": "一起几点",
+    "description": "在多个时区的可用时间里找交集，比较各地时刻并下载日历文件。",
+    "date": "2026-10-26",
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Intl",
+      "Node.js"
+    ],
+    "readme": "demos/time-together/README.md",
+    "license": "MIT",
+    "deployment": {
+      "slug": "time-together",
+      "title": "一起几点",
+      "date": "2026-10-26",
+      "status": "succeeded",
+      "url": "https://time-together-20261026.golden-berry-3772.chatgpt.site",
+      "access": "public",
+      "project_id": "appgprj_6adf19d0f0088191bd97995f23c7131d",
+      "version_id": "appgprj_6adf19d0f0088191bd97995f23c7131d~appgver_84f27c1a762081918dda6c0c4d49597f",
+      "version_number": 7,
+      "deployment_id": "appgdep_6adf20f783d48191b597b620c7afe466",
+      "source_commit_sha": "5c5b2bef3ab66abce4794816a8d59ea5dad32462",
+      "published_at": "2026-10-26T09:44:26.836323+00:00",
+      "creation_intent": "user_requested",
+      "tests": {
+        "command": "npm test",
+        "passed": 27,
+        "failed": 0,
+        "build": "passed"
+      },
+      "browser_qa": {
+        "tool": "cua_repl cloud Chrome",
+        "tab_id": "16",
+        "tested_at": "2026-10-26T09:25:00Z",
+        "desktop": true,
+        "viewport_css": {
+          "width": 1180,
+          "height": 757
+        },
+        "horizontal_overflow": false,
+        "mobile": "Responsive CSS reviewed; no mobile viewport/browser test available",
+        "flows": [
+          "Change suggested start updates all local times",
+          "No-overlap disables calendar export",
+          "Add New York, extend Shanghai window restores 2-hour overlap",
+          "30min duration yields more candidates",
+          "London 2026-10-25 shows25-hour day and visible duplicate GMT offsets",
+          "London 2026-03-29 shows23-hour day",
+          "All-day and cross-midnight window labels",
+          "Keyboard focus retained after rerender",
+          "Actual ICS download event completed",
+          "Integrator independently read downloaded ICS bytes: correct UTC event, no attendees, CRLF, <=75 UTF-8 octets per line",
+          "v5 copy audit: removed implementation reassurance; actual download shows concise feedback 日历已生成",
+          "v7 desktop split workspace screenshot: editable city bands left; dark selected result and gold download right; both cities and primary action first screen; selection/no-overlap rechecked"
+        ],
+        "limits": [
+          "Downloaded ICS bytes validated by pure tests, browser download completion observed; no calendar app import test",
+          "Timezone data is browser Intl, 2020-2040, listed modern IANA zones"
+        ],
+        "copy_audit_at": "2026-10-26T09:36:00Z",
+        "visual_hierarchy_audit_at": "2026-10-26T09:44:00Z"
+      }
+    },
+    "category": "生活",
+    "interaction": "设置日期和各地可用时间，点选共同空闲并导出日历。",
+    "accent": "#176B68"
   }
 ]

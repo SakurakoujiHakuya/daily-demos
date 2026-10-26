@@ -1,0 +1,1 @@
+{"name":"creative-source-finder","version":"1.0.0","private":true,"type":"module","license":"MIT","engines":{"node":">=20"},"scripts":{"test":"node --test test/*.test.js","build":"node scripts/build.mjs","start":"node scripts/serve.mjs"}}

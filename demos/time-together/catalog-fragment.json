@@ -1,0 +1,72 @@
+{
+  "slug": "time-together",
+  "path": "demos/time-together",
+  "title": "一起几点",
+  "description": "在多个时区的可用时间里找交集，比较各地时刻并下载日历文件。",
+  "date": "2026-10-26",
+  "stack": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Intl",
+    "Node.js"
+  ],
+  "readme": "demos/time-together/README.md",
+  "license": "MIT",
+  "deployment": {
+    "slug": "time-together",
+    "title": "一起几点",
+    "date": "2026-10-26",
+    "status": "succeeded",
+    "url": "https://time-together-20261026.golden-berry-3772.chatgpt.site",
+    "access": "public",
+    "project_id": "appgprj_6adf19d0f0088191bd97995f23c7131d",
+    "version_id": "appgprj_6adf19d0f0088191bd97995f23c7131d~appgver_84f27c1a762081918dda6c0c4d49597f",
+    "version_number": 7,
+    "deployment_id": "appgdep_6adf20f783d48191b597b620c7afe466",
+    "source_commit_sha": "5c5b2bef3ab66abce4794816a8d59ea5dad32462",
+    "published_at": "2026-10-26T09:44:26.836323+00:00",
+    "creation_intent": "user_requested",
+    "tests": {
+      "command": "npm test",
+      "passed": 27,
+      "failed": 0,
+      "build": "passed"
+    },
+    "browser_qa": {
+      "tool": "cua_repl cloud Chrome",
+      "tab_id": "16",
+      "tested_at": "2026-10-26T09:25:00Z",
+      "desktop": true,
+      "viewport_css": {
+        "width": 1180,
+        "height": 757
+      },
+      "horizontal_overflow": false,
+      "mobile": "Responsive CSS reviewed; no mobile viewport/browser test available",
+      "flows": [
+        "Change suggested start updates all local times",
+        "No-overlap disables calendar export",
+        "Add New York, extend Shanghai window restores 2-hour overlap",
+        "30min duration yields more candidates",
+        "London 2026-10-25 shows25-hour day and visible duplicate GMT offsets",
+        "London 2026-03-29 shows23-hour day",
+        "All-day and cross-midnight window labels",
+        "Keyboard focus retained after rerender",
+        "Actual ICS download event completed",
+        "Integrator independently read downloaded ICS bytes: correct UTC event, no attendees, CRLF, <=75 UTF-8 octets per line",
+        "v5 copy audit: removed implementation reassurance; actual download shows concise feedback 日历已生成",
+        "v7 desktop split workspace screenshot: editable city bands left; dark selected result and gold download right; both cities and primary action first screen; selection/no-overlap rechecked"
+      ],
+      "limits": [
+        "Downloaded ICS bytes validated by pure tests, browser download completion observed; no calendar app import test",
+        "Timezone data is browser Intl, 2020-2040, listed modern IANA zones"
+      ],
+      "copy_audit_at": "2026-10-26T09:36:00Z",
+      "visual_hierarchy_audit_at": "2026-10-26T09:44:00Z"
+    }
+  },
+  "category": "生活",
+  "interaction": "设置日期和各地可用时间，点选共同空闲并导出日历。",
+  "accent": "#176B68"
+}

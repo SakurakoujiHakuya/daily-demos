@@ -30,8 +30,10 @@
 | 2026-10-25 | 渡口摆渡人 | 安排左右舷配重、留岸看护与有限船票，在三份河畔委托中找出安全的往返方案 | [README](demos/ferry-balance/README.md) |
 | 2026-10-25 | 双声道小说 | 重排三篇原创短篇的双人桥段，修复时间与因果、选择留白和叙述前景，织出不同结尾。 | [README](demos/story-loom/README.md) |
 | 2026-10-25 | 花束之间 | 有限花材的花束创作游戏：三摊九份委托，剪裁、调配、配色与剪余再用；自由创作与 SVG 导出。 | [README](demos/market-bouquet/README.md) |
-
 | 2026-10-26 | 图片轻装 | 缩放、压缩和转换图片，比较原图与结果体积并下载 | [README](demos/image-light/README.md) |
+| 2026-10-26 | 文字整理台 | 保留原文的文本清理台：整理空白、合并 PDF 断行、统一列表，预览后复制或下载。 | [README](demos/text-tidy/README.md) |
+| 2026-10-26 | 创作素材导航 | 按用途筛选12个字体、图标、照片与插画来源，对比许可与费用，收藏并导出素材清单。 | [README](demos/creative-source-finder/README.md) |
+| 2026-10-26 | 一起几点 | 在多个时区的可用时间里找交集，比较各地时刻并下载日历文件。 | [README](demos/time-together/README.md) |
 
 在线体验（公开）：
 - 把今天折成一首诗：https://hakuya-fold-a-day.golden-berry-3772.chatgpt.site
@@ -63,6 +65,10 @@
 - 花束之间：https://hakuya-market-bouquet.golden-berry-3772.chatgpt.site
 
 - 图片轻装：https://image-light-20261026.golden-berry-3772.chatgpt.site
+
+- 文字整理台：https://text-tidy-20261026.golden-berry-3772.chatgpt.site
+- 创作素材导航：https://creative-source-finder-20261026.golden-berry-3772.chatgpt.site
+- 一起几点：https://time-together-20261026.golden-berry-3772.chatgpt.site
 
 各项目独立部署；本作品无需登录即可访问。
 

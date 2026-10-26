@@ -1,0 +1,88 @@
+{
+  "slug": "text-tidy",
+  "path": "demos/text-tidy",
+  "title": "文字整理台",
+  "description": "保留原文的文本清理台：整理空白、合并 PDF 断行、统一列表，预览后复制或下载。",
+  "date": "2026-10-26",
+  "stack": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Node.js"
+  ],
+  "readme": "demos/text-tidy/README.md",
+  "license": "MIT",
+  "deployment": {
+    "slug": "text-tidy",
+    "title": "文字整理台",
+    "date": "2026-10-26",
+    "status": "succeeded",
+    "url": "https://text-tidy-20261026.golden-berry-3772.chatgpt.site",
+    "access": "public",
+    "project_id": "appgprj_6adf19a79fd881919ad83f73e0351200",
+    "version_id": "appgprj_6adf19a79fd881919ad83f73e0351200~appgver_0ebdb4d71fd08191832ff223146051c6",
+    "version_number": 5,
+    "deployment_id": "appgdep_6adf2080f0008191867c9696410b7bd3",
+    "source_commit_sha": "22f16890132f3a7bd7806e2b717340e68cb65ef0",
+    "published_at": "2026-10-26T09:42:31.972522+00:00",
+    "creation_intent": "user_requested",
+    "tests": {
+      "command": "npm test",
+      "passed": 19,
+      "failed": 0,
+      "build": "passed",
+      "option_combinations": 32
+    },
+    "browser_qa": {
+      "tool": "cua_repl cloud Chrome",
+      "tab_id": "15",
+      "tested_at": "2026-10-26T09:22:58Z",
+      "viewport_css": {
+        "width": 1180,
+        "height": 757
+      },
+      "horizontal_overflow": false,
+      "copy_button_bottom": 632,
+      "flows": [
+        "Three presets: whitespace 56→38 chars; PDF 9→7 lines; bullets normalize while numbered lines preserved",
+        "Custom input and optional inner-space collapse",
+        "Apply output then undo restores original",
+        "Clear and undo restores exact original",
+        "v3 repeated input undo restores first input",
+        "Copy click successful UI feedback; OS clipboard contents not independently verified",
+        "TXT download event completed and browser download path returned",
+        "100001-character input retained, processing disabled with clear error",
+        "Integrator independently read downloaded TXT bytes; exact UTF-8 match to visible sample result"
+      ],
+      "limits": [
+        "Narrow/mobile layout implemented and CSS reviewed, not real-device tested; cloud browser viewport-resize API unavailable",
+        "PDF line joining heuristic, not semantic document parsing"
+      ],
+      "copy_audit_v4": {
+        "tested_at": "2026-10-26T09:35:50Z",
+        "tab_id": "21",
+        "result": "Removed privacy/local-processing reassurance, redundant result placeholder; sample output unchanged"
+      },
+      "hierarchy_v5": {
+        "tested_at": "2026-10-26T09:42:43Z",
+        "tab_id": "27",
+        "viewport_css": [
+          1180,
+          757
+        ],
+        "copy_button_bottom": 632.16,
+        "horizontal_overflow": false,
+        "changes": [
+          "Neutral input canvas versus white emphasized result",
+          "01→02 task direction",
+          "Stronger labels and statistics",
+          "Accent reserved selected tab and primary copy action"
+        ],
+        "sample_output_unchanged": true
+      }
+    }
+  },
+  "category": "创作",
+  "interaction": "粘贴文字，选择整理方式，对照结果后复制；可细调、撤销和下载。",
+  "accent": "#245D4B"
+}

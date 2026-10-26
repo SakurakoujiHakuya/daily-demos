@@ -1,0 +1,39 @@
+
+> creative-source-finder@1.0.0 test
+> node --test test/*.test.js
+
+✔ 12 distinct curated sources, four categories (2.945669ms)
+✔ every source has checked license evidence and valid HTTPS (0.37659ms)
+✔ normalization handles width and case (0.313264ms)
+✔ default returns all (0.319443ms)
+✔ Chinese task search (1.238555ms)
+✔ multiple query terms use AND (0.384251ms)
+✔ query case and width insensitive (0.236779ms)
+✔ category narrows to three (0.27083ms)
+✔ format plus category (0.427607ms)
+✔ license facet keeps only requested types (0.535911ms)
+✔ no match remains empty (0.352714ms)
+✔ saved filter does not leak unselected (0.374316ms)
+✔ saved with none empty (0.148014ms)
+✔ clear filters preserves query and compare (0.343319ms)
+✔ state round trips unicode and compare (0.505345ms)
+✔ default state clean URL (0.113021ms)
+✔ unknown category and license ignored (0.129315ms)
+✔ unknown compare, duplicates and overflow removed (0.175696ms)
+✔ query limited (0.245261ms)
+✔ sanitize corrupt storage shapes (0.145891ms)
+✔ toggle comparison adds removes (0.277991ms)
+✔ comparison maximum is non-destructive (0.27092ms)
+✔ export has actual selected links and constraints (0.212902ms)
+✔ export skips unknown ids (0.098629ms)
+✔ export preserves chosen order (0.493086ms)
+✔ format facets are category relevant (0.284942ms)
+✔ invalid or incompatible URL format cleared (0.1586ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 219.070743
